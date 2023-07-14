@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("../assets/fonts/roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Robolto";
+    src: url("../assets/fonts/roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url("../assets/fonts/Pacifico-Regular.ttf");
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.app-store-badge {
+    margin-top: 5px;
+    width: 10em;
+    height: 3.5em;
+}
+
+.app-store-text {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.main {
+    position: relative;
+    top: 70px;
+    margin: 0;
+}
+
+.left-image-text {
+    position: absolute;
+    top: 120px;
+    left: -60px;
+    transform: translateY(-50%) rotate(-90deg);
+    text-align: left;
+    color: white;
+    font-size: 30px;
+    font-family: Robolto, sans-serif;
+}
+
+.right-image-text {
+    position: absolute;
+    top: 100px;
+    right: -30px;
+    transform: translateY(-50%) rotate(-90deg);
+    text-align: right;
+    color: white;
+    font-size: 30px;
+    font-family: Robolto, sans-serif;
+}
+
+.bottom-image-text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-family: Robolto, sans-serif;
+}
+
+h1 {
+    font-family: Robolto, sans-serif;
+}
+
+p {
+    font-family: Roboto, sans-serif;
+}
