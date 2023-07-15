@@ -3,7 +3,7 @@ headerTemplate.innerHTML = `
 
 <style>
 @font-face {
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     src: url("fonts/roboto/Roboto-Regular.ttf");
 }
 
