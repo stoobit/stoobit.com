@@ -1,17 +1,17 @@
 @font-face {
-    font-family: "Roboto";
+    font-family: Roboto, sans-serif;
     src: url("../assets/fonts/roboto/Roboto-Regular.ttf");
     font-weight: normal;
 }
 
 @font-face {
-    font-family: "Roboto";
+    font-family: Robolto, sans-serif;
     src: url("../assets/fonts/roboto/Roboto-Bold.ttf");
     font-weight: bold;
 }
 
 @font-face {
-    font-family: "Pacifico";
+    font-family: Pacifico;
     src: url("../assets/fonts/Pacifico-Regular.ttf");
 }
 
