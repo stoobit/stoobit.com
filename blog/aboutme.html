@@ -40,14 +40,146 @@
 <body class="main" ; bgcolor="#fff">
     <header-component></header-component>
 
-    <center>
-        <img src="../assets/images/memojipeace.png" style="height: 200px; padding-top: 12px;"></img>
-        
-        <h1>Hi, I'm Till!</h1>
-        <p>Hi, I'm Till, a 16 year old student from Germany and developer of the note-taking app Productivity Pro.</p>
+    <center style="padding-left: 20px; padding-right: 20px;">
+        <div>
+            <img src="../assets/images/memojipeace.png" style="height: 200px; padding-top: 12px;"></img>
+            <h1 style="color: gray;"">Hi, I'm Till!</h1>
+        </div>
     </center>
+    <div class=" grid-container">
 
-    <footer-component></footer-component>
+                <div class="top-box">
+                    <p style="text-align: left;">
+                        Hello, I'm Till, a 16-year-old student from Germany and developer of the note-taking app
+                        Productivity Pro. When I got my first MacBook at the end of 2020, I discovered
+                        Apple's Swift Playgrounds app in the AppStore after a while. Although I had previously been very
+                        interested in technology, it was this app that first introduced me to programming. After
+                        understanding the basics of programming, I learned about game development and Unity, but only
+                        superficially.
+                    </p>
+                </div>
+
+                <div class="top-box">
+                    <div class="image-box" style="padding: 0px;">
+                        <img style="width: 100%; padding-top: 5px; padding-bottom: 0px;"
+                            src="../assets/images/swiftplaygrounds.png" alt="Swift Playgrounds">
+                    </div>
+                </div>
+
+                <div class="top-box">
+                    <p style="text-align: left;">
+                        When I got to 9th grade, some of my classmates started replacing their folders or notebooks with
+                        iPads. I wanted to do that too, but since I didn't have enough money to buy an iPad, I had to
+                        wait until May (the school year in Germany starts in September). Then around January 2022 I had
+                        an idea – Why not write the note-taking app for school yourself? On the one hand I was up for
+                        the challenge and on the other hand I didn't like a few things I had seen on my friends'
+                        note-taking apps. Since I had started with Swift, the basis for this project was already there.
+                        However, I had no clue about user interface frameworks like SwiftUI and UIKit, so I spent some
+                        time learning the basics first.
+                        Then, a month later, in February, I created the Xcode project for my app.
+                    </p>
+                </div>
+
+                <div class="top-box">
+                    <div class="image-box" style="padding: 0px;">
+                        <img style="width: 100%; padding-top: 5px; padding-bottom: 0px;"
+                            src="../assets/images/xcode0.png" alt="Productivity Pro in Xcode">
+                    </div>
+                </div>
+
+                <div class="top-box">
+                    <p style="text-align: left;">
+                        The first challenge was to learn how to create document-based apps in SwiftUI and in the
+                        beginning I had some difficulties.
+                        But after I managed that, I programmed that you can choose templates and create pages, I added
+                        different shapes and made text fields. Since I'm a big fan of Markdown, the text fields in
+                        Productivity Pro are also working with Markdown, although there are probably some people who
+                        don't like it. The markup feature of Productivity Pro is based on Apple's PencilKit, because I
+                        really like the
+                        design of the toolpicker and wanted to have it in my app.
+                        Then I added the ability to import images & PDFs and scan documents and in the process I
+                        implemented an overview for the pages.
+                    </p>
+                </div>
+
+                <div class="top-box">
+                    <div class="image-box" style="padding: 0px;">
+                        <img style="width: 100%; padding-top: 5px; padding-bottom: 0px;"
+                            src="../assets/images/mdexample.png" alt="Markdown">
+                    </div>
+                </div>
+
+                <div class="top-box">
+                    <p style="text-align: left;">
+                        But during the whole development there was a problem that constantly accompanied me. Since you
+                        should be able to zoom and scroll into the notes, I had to implement a scroll view. And since
+                        the scroll view in SwiftUI was very limited, I had to resort to the UIScrollView from UIKit. And
+                        although I had already successfully done this with both the PencilKit and the possibility of
+                        scanning documents, I still had many difficulties with the ScrollView, so that I despaired many
+                        times and it took a total of more than four months until the result was satisfactory.
+                    </p>
+                </div>
+
+                <div class="top-box">
+                    <p style="text-align: left;">
+                        After almost a year and a half, on Friday, July 14, 2023, the time had finally come.
+                        Productivity Pro appeared on the AppStore, the first coding project I ever fully completed. And
+                        even if it was sometimes very exhausting and I often didn't know what to do, most of the time it
+                        was a lot of fun developing Productivity Pro. You can download the app for €5.99 or $4.99 (US)
+                        from the AppStore and I really appreciate every purchase. Not just because it makes money, but
+                        above all because I can see that my app is helping people and taking them further.
+                    </p>
+                </div>
+
+                <div class="desktop">
+                    <div class="bottom-boxes">
+                        <div class="custom-box">
+                            <center>
+                                <div class="app-store-badge" style="padding-top: 15px;">
+                                    <a href="https://apps.apple.com/app/productivity-pro/id6449678571?l=en">
+                                        <img src="../assets/images/asbadge.png" alt="Download on the App Store">
+                                    </a>
+                                </div>
+                                <p class="app-store-text">Available on iPad</p>
+                            </center>
+                        </div>
+
+                        <div class="image-box" style="padding: 0px;">
+                            <img src="../assets/images/ppicon.png" alt="App Icon" style="height: 100px;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile top-box">
+                    <center>
+                        <div class="app-store-badge" style="padding-top: 15px;">
+                            <a href="https://apps.apple.com/app/productivity-pro/id6449678571?l=en">
+                                <img src="../assets/images/asbadge.png" alt="Download on the App Store">
+                            </a>
+                        </div>
+                        <p class="app-store-text">Available on iPad</p>
+                    </center>
+                </div>
+
+                <div class="mobile top-box">
+                    <div class="image-box" style="padding: 10px;">
+                        <img src="../assets/images/ppicon.png" alt="App Icon" style="height: 100px;">
+                    </div>
+                </div>
+
+                <div class="top-box" id="support">
+                    <h1 style="color: gray;">Any Questions?</h1>
+                    <p>
+                        <a style="color: #2196f3; font-family: Roboto;" href="mailto:contact.stoobit@aol.com">Email</a>
+                    </p>
+                    <p>
+                        <a style="color: #32c356; font-family: Roboto;" href="imessage://contact.stoobit@aol.com">iMessages</a>
+                    </p>
+                </div>
+
+        </div>
+
+        <footer-component></footer-component>
 </body>
 
 <script>
