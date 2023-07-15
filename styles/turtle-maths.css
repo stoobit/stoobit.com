@@ -36,18 +36,18 @@
 }
 
 @font-face {
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto";
     src: url("../assets/fonts/roboto/Roboto-Regular.ttf");
     font-weight: normal;
 }
 
 @font-face {
-    font-family: Robolto, sans-serif;
+    font-family: "Robolto";
     src: url("../assets/fonts/roboto/Roboto-Bold.ttf");
     font-weight: bold;
 }
 
 @font-face {
-    font-family: Roboto, sans-serif;
+    font-family: "Pacifico";
     src: url("../assets/fonts/Pacifico-Regular.ttf");
 }

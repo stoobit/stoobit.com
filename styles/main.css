@@ -1,15 +1,15 @@
 @font-face {
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto";
     src: url("../assets/fonts/roboto/Roboto-Regular.ttf");
 }
 
 @font-face {
-    font-family: Robolto, sans-serif;
+    font-family: "Robolto";
     src: url("../assets/fonts/roboto/Roboto-Bold.ttf");
 }
 
 @font-face {
-    font-family: Pacifico;
+    font-family: "Pacifico";
     src: url("../assets/fonts/Pacifico-Regular.ttf");
 }
 
@@ -46,7 +46,7 @@ img {
     text-align: left;
     color: white;
     font-size: 30px;
-    font-family: Robolto, sans-serif;
+    font-family: "Robolto", sans-serif;
 }
 
 .right-image-text {
@@ -57,7 +57,7 @@ img {
     text-align: right;
     color: white;
     font-size: 30px;
-    font-family: Robolto, sans-serif;
+    font-family: "Robolto", sans-serif;
 }
 
 .bottom-image-text {
@@ -68,13 +68,13 @@ img {
     text-align: center;
     color: white;
     font-size: 24px;
-    font-family: Robolto, sans-serif;
+    font-family: "Robolto", sans-serif;
 }
 
 h1 {
-    font-family: Robolto, sans-serif;
+    font-family: "Robolto", sans-serif;
 }
 
 p {
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
 }
