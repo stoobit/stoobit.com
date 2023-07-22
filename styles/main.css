@@ -81,6 +81,12 @@ p {
     line-height: 1.5;
 }
 
+ul {
+    font-family: "Roboto", sans-serif;
+    font-size: 13pt;
+    line-height: 1.5;
+}
+
 .linkless {
     text-decoration: none;
     color: black;
