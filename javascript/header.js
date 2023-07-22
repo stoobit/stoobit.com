@@ -69,7 +69,7 @@ nav a {
 </div>
 <nav>
     <ul>
-        <li><a href="https://www.stoobit.com/blog/blog.html">Blog</a></li>
+        <li><a href="https://www.stoobit.com/home/home.html">Home</a></li>
     </ul>
 </nav>
 </header>
