@@ -45,7 +45,7 @@ footer {
 
 <footer>
   <div class="left-buttons">
-  <a href="https://twitter.com/prodpro_en" target="_blank">Twitter</a>
+  <a href="https://twitter.com/stoobitofficial" target="_blank">Twitter</a>
   <a href="https://www.youtube.com/@prod_pro" target="_blank">YouTube</a>
   </div>
   <div class="right-buttons">
