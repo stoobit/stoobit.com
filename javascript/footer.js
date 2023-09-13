@@ -45,7 +45,8 @@ footer {
 
 <footer>
   <div class="left-buttons">
-  <a href="https://twitter.com/stoobitofficial" target="_blank">Twitter</a>
+  <a href="https://www.instagram.com/productivitypro_app/" target="_blank">Instagram</a>
+  <a href="https://twitter.com/stoobitofficial" target="_blank">X</a>
   <a href="https://www.youtube.com/@prod_pro" target="_blank">YouTube</a>
   </div>
   <div class="right-buttons">
