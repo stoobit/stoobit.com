@@ -54,7 +54,7 @@ footerTemplate.innerHTML = `
   </div>
 
   <div class="left-buttons">
-    <h3>Social</h3>
+    <h3>Socials</h3>
     <p>
       <a href="https://www.instagram.com/productivitypro_app/" target="_blank">Instagram</a>
     </p>
