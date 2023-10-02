@@ -2,7 +2,7 @@ const footerTemplate = document.createElement('template');
 footerTemplate.innerHTML = `
 
 <style>
-footer {
+  footer {
     background-color: #fff;
     display: flex;
     justify-content: space-between;
@@ -11,14 +11,15 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 50px;
+    height: 150px;
+    vertical-align: top;
   }
 
   a {
     font-family: Roboto;
     text-decoration: none;
   }
-  
+
   .left-buttons a {
     color: #000;
     margin-right: 10px;
@@ -30,42 +31,69 @@ footer {
     text-decoration: none;
     color: #000;
   }
-  
-  .right-buttons button {
-    background-color: #fff;
+
+  h3 {
+    font-family: "robolto";
+    text-decoration: none;
     color: #000;
-    border: none;
-    padding: 5px 10px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
   }
 </style>
 
 <footer>
   <div class="left-buttons">
-  <a href="https://www.instagram.com/productivitypro_app/" target="_blank">Instagram</a>
-  <a href="https://twitter.com/stoobitofficial" target="_blank">X</a>
-  <a href="https://www.youtube.com/@prod_pro" target="_blank">YouTube</a>
+    <h3>Contact</h3>
+    <p>
+      <a href="mailto:contact.stoobit@aol.com" target="_blank">Email</a>
+    </p>
+    <p>
+      <a href="imessage://contact.stoobit@aol.com" target="_blank">iMessages</a>
+    </p>
+    <p>
+      <a href="https://www.stoobit.com/legal-notice.html">Legal Notice</a>
+    </p>
   </div>
-  <div class="right-buttons">
-    <a href="https://www.stoobit.com/legal-notice.html" class="legal-notice">Legal Notice</a>
+
+  <div class="left-buttons">
+    <h3>Social Media</h3>
+    <p>
+      <a href="https://www.instagram.com/productivitypro_app/" target="_blank">Instagram</a>
+    </p>
+    <p>
+      <a href="https://twitter.com/stoobitofficial" target="_blank">X</a>
+    </p>
+    <p>
+      <a href="https://www.youtube.com/@prod_pro" target="_blank">YouTube</a>
+    </p>
+  </div>
+
+  <div class="left-buttons">
+    <h3>Products</h3>
+    <p>
+      <a href="https://apps.apple.com/de/app/productivity-pro/id6449678571?itsct=apps_box_link&itscg=30200"
+        target="_blank">Productivity Pro</a>
+    </p>
+    <p>
+      <a href="https://apps.apple.com/us/app/turtle-maths/id1645129218?itsct=apps_box_link&itscg=30200"
+        target="_blank">Turtle Maths</a>
+    </p>
+    <p>
+      <a href="" target="_blank"></a>
+    </p>
   </div>
 </footer>
 
 `
 
 class Footer extends HTMLElement {
-    constructor() {
-        // Always call super first in constructor
-        super();
-    }
+constructor() {
+// Always call super first in constructor
+super();
+}
 
-    connectedCallback() {
-        const shadowRoot = this.attachShadow({ mode: 'open' });
-        shadowRoot.appendChild(footerTemplate.content);
-    }
+connectedCallback() {
+const shadowRoot = this.attachShadow({ mode: 'open' });
+shadowRoot.appendChild(footerTemplate.content);
+}
 }
 
 customElements.define('footer-component', Footer);
