@@ -18,7 +18,7 @@ body {
 }
 
 header {
-    background-color: #fff;
+    background-color:#000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,7 +55,7 @@ a {
 
 nav a {
     font-family: 'Roboto';
-    color: #000;
+    color: #fff;
     text-decoration: none;
     font-size: 18px;
 }
@@ -63,14 +63,9 @@ nav a {
 
 <header>
 <div class="logo">
-    <a href="https://www.stoobit.com">
-        <p style="color: #2196f3;">stoobit</p< /a>
+    <a href="https://dev.stoobit.com">
+        <p style="color: #2196f3;">stoobit dev</p< /a>
 </div>
-<nav>
-    <ul>
-        <li><a href="https://www.stoobit.com/home/home.html">Home</a></li>
-    </ul>
-</nav>
 </header>
 `
 

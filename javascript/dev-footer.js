@@ -1,0 +1,93 @@
+const footerTemplate = document.createElement('template');
+footerTemplate.innerHTML = `
+
+<style>
+  footer {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    vertical-align: top;
+  }
+
+  a {
+    font-family: Roboto;
+    text-decoration: none;
+  }
+
+  .left-buttons a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 15px;
+  }
+
+  h3 {
+    font-family: "robolto";
+    text-decoration: none;
+    color: #fff;
+  }
+</style>
+
+<footer>
+  <div class="left-buttons">
+    <h3>Contact</h3>
+    <p>
+      <a href="mailto:contact.stoobit@aol.com" target="_blank">Email</a>
+    </p>
+    <p>
+      <a href="imessage://contact.stoobit@aol.com" target="_blank">iMessage</a>
+    </p>
+    <p>
+      <a href="https://www.stoobit.com/legal-notice.html">Legal Notice</a>
+    </p>
+  </div>
+
+  <div class="left-buttons">
+    <h3>Socials</h3>
+    <p>
+      <a href="https://www.instagram.com/productivitypro_app/" target="_blank">Instagram</a>
+    </p>
+    <p>
+      <a href="https://twitter.com/stoobitofficial" target="_blank">X</a>
+    </p>
+    <p>
+      <a href="https://www.youtube.com/@prod_pro" target="_blank">YouTube</a>
+    </p>
+  </div>
+
+  <div class="left-buttons">
+    <h3>Products</h3>
+    <p>
+      <a href="https://apps.apple.com/de/app/productivity-pro/id6449678571?itsct=apps_box_link&itscg=30200"
+        target="_blank">Productivity Pro</a>
+    </p>
+    <p>
+      <a href="https://apps.apple.com/us/app/turtle-maths/id1645129218?itsct=apps_box_link&itscg=30200"
+        target="_blank">Turtle Maths</a>
+    </p>
+    <p>
+      <a href="" target="_blank"></a>
+    </p>
+  </div>
+</footer>
+
+`
+
+class Footer extends HTMLElement {
+constructor() {
+// Always call super first in constructor
+super();
+}
+
+connectedCallback() {
+const shadowRoot = this.attachShadow({ mode: 'open' });
+shadowRoot.appendChild(footerTemplate.content);
+}
+}
+
+customElements.define('footer-component', Footer);
