@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>stoobit Developer</title>
+    <title>Productivity Pro</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,9 +22,9 @@
     <link rel="icon" type="image/png" sizes="96x96" href="../assets/images/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicons/favicon-16x16.png">
 
-    <meta name="description" content="stoobit | Libraries, Data Structures & more">
+    <meta name="description" content="Integrate .pronote into your app!">
     <meta name="keywords"
-        content="turtle, maths, turtle maths, productivity, pro, productivity pro, app, apps, software, notes, note taking, calculator, unit converter, formula library, cheet sheets, api, developer, data models, coding programming">
+        content="turtle, maths, turtle maths, productivity, pro, productivity pro, app, apps, software, notes, note taking, calculator, unit converter, formula library, cheet sheets">
 
     <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#fff" media="(prefers-color-scheme: dark)">
@@ -32,27 +32,41 @@
     <script src="../javascript/dev-footer.js"></script>
     <script src="../javascript/dev-header.js"></script>
 
-    <link rel="stylesheet" href="../styles/dev.css">
     <link rel="stylesheet" href="../styles/dev-helper.css">
+    <link rel="stylesheet" href="../styles/dev.css">
 
 </head>
 
-<body class="main" ; bgcolor="black">
+<body class="main" ; bgcolor="#000">
     <header-component></header-component>
 
-    <div style="position: relative;">
-        <a href="datamodels.html">
-          <img src="../assets/images/models.png" alt="MacBook Air M2 with Xcode" style="width: 100%;">
-          <p class="left-image-text">Data Models</p>
-        </a>
-      </div>
-    
-      <div style="position: relative;">
-        <a href="">
-          <img src="../assets/images/ppdrawing.png" alt="MacBook Air M2 with Xcode" style="width: 100%;">
-          <p class="right-image-text">PPDrawingKit</p>
-        </a>
-      </div>
+    <center>
+        <h1 style="color: gray; font-size: 50px;">Data Models</h1>
+    </center>
+
+    <div class="grid-container">
+
+        <div class="top-box">
+            <p>With the launch of Productivity Pro 2, we are excited to introduce a new file format called .pronote.
+                Going forward, .pronote will be the preferred format for exporting and sharing Productivity Pro notes,
+                while the .pro file format will be deprecated and primarily used for importing existing notes into
+                Productivity Pro 2.</br>
+                In an effort to facilitate seamless integration and support for Productivity Pro notes in other
+                applications, we have made the Swift code for the .pronote data models publicly available. We want to
+                emphasize that there are no licensing fees or similar obligations; all we kindly request is that you
+                acknowledge the use of "Productivity Pro" in your implementation.
+        </div>
+
+        <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FExportableNoteModel.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+
+        <div class="top-box">
+            <p>
+                We genuinely appreciate and welcome everyone who chooses to integrate .pronote into their application,
+                thereby contributing to the continued growth and accessibility of Productivity Pro.</br>
+                For any inquiries or further information, feel free to reach out to us on X at <a style="color: #2196f3;" href="https://www.twitter.com/stoobitofficial">@stoobitofficial</a>.
+            </p>
+        </div>
+    </div>
 
     <footer-component></footer-component>
 </body>
