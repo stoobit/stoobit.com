@@ -41,7 +41,7 @@
     <header-component></header-component>
 
     <center>
-        <h1 style="color: gray; font-size: 50px;">Data Models</h1>
+        <h1 style="color: gray; font-size: 50px;">Preview</br>(available soon)</h1>
     </center>
 
     <div class="grid-container">
@@ -57,13 +57,39 @@
                 acknowledge the use of "Productivity Pro" in your implementation.
         </div>
 
-        <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FExportableNoteModel.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+        <div class="top-box">
+            <p>Basically, .pronote files are nothing more than .json files with a different extension. To encode or
+                decode structs (and also classes) into/from the JSON format using Swift, they need to conform to the
+                Codable protocol. Since many essential data types in Swift/SwiftUI, such as Color or CGPoint, do not
+                conform to this protocol, some helper classes and methods are required that either conform to the
+                Codable protocol or convert the respective data type into Data( ).</p>
+        </div>
+
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FHelper%2FColorConverter.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FHelper%2FPPPosition.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FHelper%2FPPSize.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+
+        <div class="top-box">
+            <p>The topmost struct in the .pronote hierarchy is the note, which contains an array of pages. This note is
+                also encoded and decoded so that the file can be saved in JSON format.</p>
+        </div>
+
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FModels%2FExportableNoteModel.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2Fencode.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2Fdecode.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
 
         <div class="top-box">
             <p>
                 We genuinely appreciate and welcome everyone who chooses to integrate .pronote into their application,
                 thereby contributing to the continued growth and accessibility of Productivity Pro.</br>
-                For any inquiries or further information, feel free to reach out to us on X at <a style="color: #2196f3;" href="https://www.twitter.com/stoobitofficial">@stoobitofficial</a>.
+                For any inquiries or further information, feel free to reach out to us on X at <a
+                    style="color: #2196f3;" href="https://www.twitter.com/stoobitofficial">@stoobitofficial</a>.
             </p>
         </div>
     </div>
