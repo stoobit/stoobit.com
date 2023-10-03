@@ -64,7 +64,8 @@ nav a {
 <header>
 <div class="logo">
     <a href="https://dev.stoobit.com">
-        <p style="color: #2196f3;">stoobit dev</p< /a>
+        <p style="color: #2196f3;">stoobit <span style="color: grey;">dev</span></p>
+    </a>
 </div>
 </header>
 `
