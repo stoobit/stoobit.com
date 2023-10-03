@@ -46,7 +46,7 @@ footerTemplate.innerHTML = `
       <a href="mailto:contact.stoobit@aol.com" target="_blank">Email</a>
     </p>
     <p>
-      <a href="imessage://contact.stoobit@aol.com" target="_blank">iMessages</a>
+      <a href="imessage://contact.stoobit@aol.com" target="_blank">iMessage</a>
     </p>
     <p>
       <a href="https://www.stoobit.com/legal-notice.html">Legal Notice</a>
