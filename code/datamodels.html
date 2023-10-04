@@ -87,10 +87,42 @@
             src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2Fdecode.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
 
         <div class="top-box">
-            <p>A note consists of an array of the data type ExportablePageModel, which in turn contains information
-                about itself and an array of items. These items contain general values such as the position, size, and
-                the type of the item.</p>
+            <p>A note contains an array of ExportablePageModel data types, which, in turn, contain information about
+                the page itself, such as the page type and creation date, along with an array of items.</br>
+                Until Productivity Pro 2.3, we are utilizing PencilKit, which is considered outdated starting from
+                Productivity Pro 2.3. Afterward, we will transition to our proprietary PPDrawingKit, which is also
+                publicly available. Alternatively, you can manually transfer drawings from other markup libraries to the
+                ExportablePPCanvasModel.
+            </p>
         </div>
+
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FModels%2FExportablePageModel.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FTypes%2FPPPageType.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FTypes%2FPPCanvasType.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+
+        <div class="top-box">
+            <p>An item can be a text field, a shape, or something similar, and generally contains basic information,
+                such
+                as its position or size. Additionally, it stores its type, and depending on this type, an object is
+                assigned to the corresponding attribute.
+            </p>
+        </div>
+
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FModels%2FExportableItemModel.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FTypes%2FPPItemType.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FModels%2FExportableShapeModel.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FModels%2FExportableMediaModel.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FModels%2FExportableTextFieldModel.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FTypes%2FPPStrokeType.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
 
         <div class="top-box">
             <p>
