@@ -68,13 +68,15 @@
         <script
             src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FHelper%2FColorConverter.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
         <script
+            src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FHelper%2FNSAttributedStringConverter.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+        <script
             src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FHelper%2FPPPosition.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
         <script
             src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2FHelper%2FPPSize.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
 
         <div class="top-box">
-            <p>The topmost struct in the .pronote hierarchy is the note, which contains an array of pages. This note is
-                also encoded and decoded so that the file can be saved in JSON format.</p>
+            <p>At the top of the model hierarchy is the ExportableNoteModel. This model is converted into JSON format
+                and then base64-encoded before being stored in the .pronote file.</p>
         </div>
 
         <script
@@ -83,6 +85,12 @@
             src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2Fencode.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
         <script
             src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fsudo-till%2FProductivityPro-Models%2Fblob%2Fmain%2Fdecode.swift&style=stackoverflow-dark&type=code&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+
+        <div class="top-box">
+            <p>A note consists of an array of the data type ExportablePageModel, which in turn contains information
+                about itself and an array of items. These items contain general values such as the position, size, and
+                the type of the item.</p>
+        </div>
 
         <div class="top-box">
             <p>
