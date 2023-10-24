@@ -37,10 +37,10 @@ footerTemplate.innerHTML = `
   <div class="left-buttons">
     <h3>Contact</h3>
     <p>
-      <a href="mailto:contact.stoobit@aol.com" target="_blank">Email</a>
+      <a href="mailto:support@stoobit.com" target="_blank">Email</a>
     </p>
     <p>
-      <a href="imessage://contact.stoobit@aol.com" target="_blank">iMessage</a>
+      <a href="imessage://support@stoobit.com" target="_blank">iMessage</a>
     </p>
     <p>
       <a href="https://www.stoobit.com/legal-notice.html">Legal Notice</a>
@@ -67,8 +67,8 @@ footerTemplate.innerHTML = `
         target="_blank">Productivity Pro</a>
     </p>
     <p>
-      <a href="https://apps.apple.com/us/app/turtle-maths/id1645129218?itsct=apps_box_link&itscg=30200"
-        target="_blank">Turtle Maths</a>
+      <a href="https://apps.apple.com/us/app/pi-by-stoobit/id1645129218?itsct=apps_box_link&itscg=30200"
+        target="_blank">Pi</a>
     </p>
     <p>
       <a href="" target="_blank"></a>
