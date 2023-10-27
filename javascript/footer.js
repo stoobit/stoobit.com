@@ -11,7 +11,7 @@ footerTemplate.innerHTML = `
     bottom: 0;
     left: 0;
     right: 0;
-    height: 150px;
+    height: 170px;
     vertical-align: top;
   }
 
@@ -40,19 +40,6 @@ footerTemplate.innerHTML = `
 </style>
 
 <footer>
-<div class="left-buttons">
-<h3>Contact</h3>
-<p>
-  <a href="mailto:support@stoobit.com" target="_blank">Email</a>
-</p>
-<p>
-  <a href="imessage://support@stoobit.com" target="_blank">iMessage</a>
-</p>
-<p>
-  <a href="https://www.stoobit.com/legal-notice.html">Legal Notice</a>
-</p>
-</div>
-
   <div class="left-buttons">
     <h3>Socials</h3>
     <p>
@@ -63,6 +50,9 @@ footerTemplate.innerHTML = `
     </p>
     <p>
       <a href="https://www.youtube.com/@prod_pro" target="_blank">YouTube</a>
+    </p>
+    <p>
+      <a href="https://whatsapp.com/channel/0029VaD7XGC65yDFO8gTBt3N" target="_blank">WhatsApp</a>
     </p>
   </div>
 
@@ -79,21 +69,40 @@ footerTemplate.innerHTML = `
     <p>
       <a href="" target="_blank"></a>
     </p>
+    <p>
+      <a href="" target="_blank"></a>
+    </p>
+  </div>
+
+  <div class="left-buttons">
+    <h3>Contact</h3>
+    <p>
+      <a href="mailto:support@stoobit.com" target="_blank">Email</a>
+    </p>
+    <p>
+      <a href="imessage://support@stoobit.com" target="_blank">iMessage</a>
+    </p>
+    <p>
+      <a href="https://www.stoobit.com/legal-notice.html">Legal Notice</a>
+    </p>
+    <p>
+      <a href="" target="_blank"></a>
+    </p>
   </div>
 </footer>
 
 `
 
 class Footer extends HTMLElement {
-  constructor() {
-    // Always call super first in constructor
-    super();
-  }
+constructor() {
+// Always call super first in constructor
+super();
+}
 
-  connectedCallback() {
-    const shadowRoot = this.attachShadow({ mode: 'open' });
-    shadowRoot.appendChild(footerTemplate.content);
-  }
+connectedCallback() {
+const shadowRoot = this.attachShadow({ mode: 'open' });
+shadowRoot.appendChild(footerTemplate.content);
+}
 }
 
 customElements.define('footer-component', Footer);
