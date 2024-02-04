@@ -1,0 +1,183 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("../assets/fonts/roboto/Roboto-Regular.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Robolto";
+    src: url("../assets/fonts/roboto/Roboto-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url("../assets/fonts/Pacifico-Regular.ttf");
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.app-store-badge {
+    margin-top: 5px;
+    width: 10em;
+    height: 3.5em;
+}
+
+.app-store-text {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.main {
+    position: relative;
+    top: 70px;
+    margin: 0;
+}
+
+.productivityproimagetext {
+    position: absolute;
+    top: 120px;
+    left: -60px;
+    transform: translateY(-50%) rotate(-90deg);
+    text-align: left;
+    color: white;
+    font-size: 30px;
+    font-family: "Robolto", sans-serif;
+}
+
+.piimagetext {
+    position: absolute;
+    top: 102px;
+    right: -30px;
+    transform: translateY(-50%) rotate(-90deg);
+    text-align: right;
+    color: white;
+    font-size: 30px;
+    font-family: "Robolto", sans-serif;
+}
+
+.vitalityproimagetext {
+    position: absolute;
+    top: 90px;
+    left: -25px;
+    transform: translateY(-50%) rotate(-90deg);
+    text-align: left;
+    color: white;
+    font-size: 30px;
+    font-family: "Robolto", sans-serif;
+}
+
+h1 {
+    font-family: "Robolto", sans-serif;
+}
+
+h2 {
+    font-family: "Robolto", sans-serif;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-size: 13pt;
+    line-height: 1.5;
+}
+
+ul {
+    font-family: "Roboto", sans-serif;
+    font-size: 13pt;
+    line-height: 1.5;
+}
+
+.linkless {
+    text-decoration: none;
+    color: black;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.date {
+    color: gray;
+    font-size: 20px;
+}
+
+.invitation-button {
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-family: "Roboto";
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    padding-top: 25px;
+}
+
+.singlebox {
+    background-color: #fff;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.hstack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-width: 795px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}
+
+.imagebox {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}

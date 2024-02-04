@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Roboto", sans-serif;
+    src: url("../assets/fonts/roboto/");
+    font-weight: normal;
+}
+
+p {
+    font-family: "Roboto";
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+h3 {
+    font-family: "Roboto";
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+a {
+    color: #2196f3;
+    text-decoration: none;
+}
