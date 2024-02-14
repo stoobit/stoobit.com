@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Markdown</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../xyz/assets/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../xyz/assets/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../xyz/assets/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../xyz/assets/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../xyz/assets/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../xyz/assets/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../xyz/assets/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../xyz/assets/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../xyz/assets/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../xyz/assets/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../xyz/assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../xyz/assets/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../xyz/assets/images/favicons/favicon-16x16.png">
+
+    <meta name="description" content="Productivity Pro | Productivity. Redefined. | Markdown">
+    <meta name="keywords"
+        content="productivity pro, productivity, note taking, apple, apple pencil, school, schule, hausaufgaben, aufgaben, organisation, management, notizen machen, markdown, whiteboard, schreiben, ipad, stoobit, edit, write, schreiben, bearbeiten, bibliothek, lernen, library">
+
+    <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#fff" media="(prefers-color-scheme: dark)">
+
+    <script src="../xyz/javascript/footer.js"></script>
+    <script src="../xyz/javascript/header.js"></script>
+
+    <link rel="stylesheet" href="../xyz/css/main.css">
+</head>
+
+<body class="main" ; bgcolor="#f2f2f6">
+    <header-component></header-component>
+
+    <center>
+        <h1 style="color: black; font-size: 50px;">Markdown</h1>
+    </center>
+
+    <div class="grid-container">
+        <div class="singlebox">
+            <table class="styled-table" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th class="lefttable"">Element</th>
+                        <th class="righttable">Markdown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Überschrift</td>
+                        <td><code
+                                style="font-size: 13px;"># Überschrift 1<br>## Überschrift 2<br>### Überschrift 3<br>#### Überschrift 4<br>##### Überschrift 5<br>###### Überschrift 6</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fett</td>
+                        <td><code style="font-size: 13px;">**Das ist fetter Text.**</code></td>
+                    </tr>
+                    <tr>
+                        <td>Kursiv</td>
+                        <td><code style="font-size: 13px;">*Das ist kursiver Text.*</code></td>
+                    </tr>
+                    <tr>
+                        <td>Durchgestrichen</td>
+                        <td><code style="font-size: 13px;">~~Das ist durchgestrichener Text.~~</code></td>
+                    </tr>
+                    <tr>
+                        <td>Zitat</td>
+                        <td><code style="font-size: 13px;">> Das ist ein Zitat.</code></td>
+                    </tr>
+                    <tr>
+                        <td>Absatz</td>
+                        <td><code style="font-size: 13px;">Hier ist ein\<br> Absatz</code></td>
+                    </tr>
+                    <tr>
+                        <td>geordnete Liste</td>
+                        <td><code
+                                style="font-size: 13px;">1. erster Punkt<br>2. zweiter Punkt<br>3. dritter Punkt</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ungeordnete Liste</td>
+                        <td><code style="font-size: 13px;">- erster Punkt<br>- zweiter Punkt<br>- dritter Punkt</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Checkliste</td>
+                        <td><code
+                                style="font-size: 13px;">-[x] erster Punkt<br>-[x] zweiter Punkt<br>-[] dritter Punkt</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>horizontale Linie</td>
+                        <td><code style="font-size: 13px;">- - -</code></td>
+                    </tr>
+                    <tr>
+                        <td>Code</td>
+                        <td><code style="font-size: 13px;">`let x = 5 + 3`</code></td>
+                    </tr>
+                    <tr>
+                        <td>Code Block</td>
+                        <td><code
+                                style="font-size: 13px;">```<br>struct ContentView: some View {<br>&nbsp&nbsp&nbsp&nbspvar body: some View {<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspText("Hello, World!")<br>&nbsp&nbsp&nbsp&nbsp}<br>}<br>```</code>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer-component></footer-component>
+</body>
+
+<script>
+    window.addEventListener('resize', function () {
+        var desktopText = document.querySelector('.desktop');
+        var mobileText = document.querySelector('.mobile');
+
+        if (window.innerWidth <= 795) {
+            desktopText.style.display = 'none';
+            mobileText.style.display = 'block';
+        } else {
+            desktopText.style.display = 'block';
+            mobileText.style.display = 'none';
+        }
+    });
+</script>
+
+</html>

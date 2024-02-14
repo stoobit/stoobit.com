@@ -214,3 +214,41 @@ ul {
     justify-content: center;
     width: 100%;
 }
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: "Roboto";
+    min-width: 400px;
+}
+
+.styled-table thead tr {
+    background-color: #2196f3;
+    color: #ffffff;
+    text-align: left;
+    vertical-align: top;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    vertical-align: top;
+    line-height: 24px;
+}
+
+.lefttable {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    font-family: "Robolto";
+}
+
+.righttable {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-family: "Robolto";
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
