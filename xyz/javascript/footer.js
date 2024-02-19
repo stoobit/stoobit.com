@@ -59,14 +59,14 @@ footerTemplate.innerHTML = `
   <div class="left-buttons">
     <h3>Products</h3>
     <p>
-      <a href="https://www.stoobit.com/productivitypro/productivitypro.html"
+      <a href="https://apps.apple.com/app/productivity-pro/id6449678571"
         target="_blank">Productivity Pro</a>
     </p>
     <p>
-      <a href="https://www.stoobit.com/vitalitypro/vitalitypro.html" target="_blank">Vitality Pro</a>
+      <a href="https://apps.apple.com/app/vitality-pro/id6478023736" target="_blank">Vitality Pro</a>
     </p>
     <p>
-      <a href="https://www.stoobit.com/pi/pi.html" target="_blank">Pi</a>
+      <a href="https://apps.apple.com/app/pi-by-stoobit/id1645129218" target="_blank">Pi</a>
     </p>
     <p>
       <a href="" target="_blank"></a>
@@ -82,7 +82,7 @@ footerTemplate.innerHTML = `
       <a href="imessage://support@stoobit.com" target="_blank">iMessage</a>
     </p>
     <p>
-      <a href="https://www.stoobit.com/legal-notice.html">Legal Notice</a>
+      <a href="https://www.stoobit.com/xyz/legalnotice.html">Legal Notice</a>
     </p>
     <p>
       <a href="" target="_blank"></a>
