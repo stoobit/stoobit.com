@@ -68,8 +68,7 @@ nav a {
 </div>
 <nav>
     <ul>
-        <li><a href="https://www.stoobit.com/blog/blog.html">Blog</a></li>
-        <li><a href="https://www.stoobit.com/newsroom/newsroom.html">Newsroom</a></li>
+        <li><a href="https://blog.stoobit.com">Blog</a></li>
     </ul>
 </nav>
 </header>
