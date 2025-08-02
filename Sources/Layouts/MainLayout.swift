@@ -5,10 +5,10 @@ struct MainLayout: Layout {
     var body: some Document {
         Body {
             StoobitHeader()
-                .padding(.bottom, 100)
+                .padding(.bottom, 60)
             
             content
-            
+                
             StoobitFooter()
         }
     }

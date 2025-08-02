@@ -10,30 +10,30 @@ import Ignite
 struct StoobitHeader: HTML {
     var body: some HTML {
         NavigationBar {
-            Dropdown {
-                
-            } title: {
-                Span("Key concepts")
-                    .foregroundStyle(.white)
-            }
-
-            Dropdown {
-                
-            } title: {
-                Span("Examples")
-                    .foregroundStyle(.white)
-            }
-
             Link(target: "https://github.com/twostraws/Ignite") {
-                Span("Ignite on GitHub")
-                    .foregroundStyle(.white)
+                Span("Products")
+            }
+            
+            Link(target: "https://github.com/twostraws/Ignite") {
+                Span("Blog")
             }
         } logo: {
-            Image("/images/logo.svg", description: "ExampleSite logo")
-                .frame(width: .custom("min(60vw, 300px)"), height: .percent(100%))
+            Span {
+                Span("stoo")
+                    .foregroundStyle(Color.black)
+                
+                Span("bit")
+                    .foregroundStyle(Color(hex: "#4169e1"))
+            }
+            .font(.title4)
+            .fontWeight(.bold)
         }
         .navigationItemAlignment(.trailing)
-        .background(.firebrick)
+        .navigationMenuStyle(.plain)
+        .navigationMenuIcon(.ellipsis)
+        .frame(minHeight: .px(60))
+        .style(.background, "rgba(255, 255, 255, 0.5)")
+        .style(.backdropFilter, "blur(10px)")
         .position(.fixedTop)
     }
 }

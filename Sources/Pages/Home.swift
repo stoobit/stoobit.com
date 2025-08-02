@@ -15,5 +15,8 @@ struct Home: StaticPage {
                 .foregroundStyle(Color.red)
                 .font(.title3)
         }
+        .frame(maxWidth: .vw(100%), maxHeight: .vh(100%))
+        .background(Color.red)
+        .ignorePageGutters()
     }
 }
