@@ -11,11 +11,15 @@ struct StoobitHeader: HTML {
     var body: some HTML {
         NavigationBar {
             Link(target: "https://github.com/twostraws/Ignite") {
-                Span("Products")
+                Span("Apps")
             }
             
             Link(target: "https://github.com/twostraws/Ignite") {
                 Span("Blog")
+            }
+            
+            Link(target: "mailto:till.bruegmann@stoobit.com") {
+                Span("Contact")
             }
         } logo: {
             Span {
@@ -32,7 +36,7 @@ struct StoobitHeader: HTML {
         .navigationMenuStyle(.plain)
         .navigationMenuIcon(.ellipsis)
         .frame(minHeight: .px(60))
-        .style(.background, "rgba(255, 255, 255, 0.5)")
+        .style(.background, "rgba(255, 255, 255, 0.6)")
         .style(.backdropFilter, "blur(10px)")
         .position(.fixedTop)
     }
