@@ -128,5 +128,6 @@ struct Home: StaticPage {
         }
         .style(.textAlign, "center")
         .frame(height: .percent(100%))
+        .padding(.horizontal, 20)
     }
 }
