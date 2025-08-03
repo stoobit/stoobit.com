@@ -78,7 +78,7 @@ struct Home: StaticPage {
             
             Spacer()
             
-            VStack {
+            VStack(spacing: 25) {
                 Image(
                     "/icons/swift.svg",
                     description: "The Swift Logo."
@@ -86,10 +86,31 @@ struct Home: StaticPage {
                 .resizable()
                 .frame(width: .px(100), height: .px(100))
                 
-                Text("Vitality Pro")
-                Text("Swift Student Challenge Winner")
+                VStack(spacing: 5) {
+                    Text("Vitality Pro")
+                        .font(.title1)
+                        .fontWeight(.bold)
+                    
+                    Text("Swift Student Challenge Winner")
+                        .font(.title4)
+                        .fontWeight(.regular)
+                        .foregroundStyle(Color.gray)
+                }
+               
+                let target = "https://apps.apple.com/us/app/vitality-pro/id6478023736"
                 
-                Spacer()
+                Link(target: target) {
+                    Span("View on the App Store")
+                }
+                .target(.blank)
+                .style(.display, "inline-block")
+                .style(.padding, "10px 24px")
+                .style(.backgroundColor, "#FF9230")
+                .style(.color, "white")
+                .style(.textDecoration, "none")
+                .style(.borderRadius, "9999px")
+                .style(.fontWeight, "600")
+                .style(.transition, "background-color 0.3s ease")
             }
             .style(.textAlign, "center")
             .frame(height: .percent(100%))
