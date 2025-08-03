@@ -31,7 +31,7 @@ struct StoobitHeader: HTML {
         .navigationMenuStyle(.plain)
         .navigationMenuIcon(.ellipsis)
         .frame(minHeight: .px(60))
-        .style(.background, "rgba(255, 255, 255, 0.6)")
+        .style(.background, "rgba(245, 245, 248, 0.6)")
         .style(.backdropFilter, "blur(10px)")
         .position(.fixedTop)
     }

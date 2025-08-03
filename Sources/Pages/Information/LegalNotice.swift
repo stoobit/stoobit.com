@@ -8,177 +8,71 @@
 import Ignite
 
 struct LegalNotice: StaticPage {
-    var title = "Grid Layout"
-    var description = """
-    Create flexible, responsive layouts using Ignite's 12-column grid system. \
-    Learn how to subdivide space, set explicit widths, and handle wrapping content automatically.
-    """
+    var title = "Legal Notice"
 
     var body: some HTML {
-        Text("Grid Layout")
-            .font(.title1)
-
-        Text("""
-        All layout in Ignite is handled using an invisible 12-column grid layout. \
-        You can subdivide those columns however you want, or let Ignite do it for you.
-        """)
-            .font(.lead)
-
-        Text(markdown: "To create a grid, use the `Grid` element. Your columns will be subdivided to make space for each item you've placed.")
-
-        Text("For example, these pictures all take up one third of the available space:")
-
-        CodeBlock(.swift) {
-            """
-            Grid {
-                Image("/images/photos/shades.jpg", description: "A pair of sunglasses.")
-                    .resizable()
-
-                Image("/images/photos/stack.jpg", description: "A door partly open.")
-                    .resizable()
-
-
-                Image("/images/photos/wind.jpg", description: "A windy day.")
-                    .resizable()
+        VStack(alignment: .leading, spacing: 20) {
+            Text("Legal Notice")
+                .font(.title3)
+                .fontWeight(.bold)
+            
+            ForEach(sections) { section in
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(section.title)
+                        .fontWeight(.bold)
+                    
+                    Text(section.detail)
+                }
             }
-            """
         }
-
-        Grid {
-            Image("/images/photos/shades.jpg", description: "A pair of sunglasses.")
-                .resizable()
-
-            Image("/images/photos/stack.jpg", description: "A door partly open.")
-                .resizable()
-
-            Image("/images/photos/wind.jpg", description: "A windy day.")
-                .resizable()
-        }
-        .margin(.bottom, .xLarge)
-
-        Text(markdown: "You can also explicitly set a width for each element using the `width()` modifier.")
-
-        Text("""
-        This modifier automatically causes your views to rearrange themselves when horizontal space is restricted.
-        For example, these pictures all take up one third of the available space when the browser window is wide, but all the space when the window is narrow:
-        """)
-
-        CodeBlock(.swift) {
-            """
-            Grid {
-                Image("/images/photos/shades.jpg", description: "A pair of sunglasses.")
-                    .resizable()
-                    .width(4)
-
-                Image("/images/photos/stack.jpg", description: "A door partly open.")
-                    .resizable()
-                    .width(4)
-
-                Image("/images/photos/wind.jpg", description: "A windy day.")
-                    .resizable()
-                    .width(4)
-            }
-            """
-        }
-
-        Grid {
-            Image("/images/photos/shades.jpg", description: "A pair of sunglasses.")
-                .resizable()
-                .width(4)
-
-            Image("/images/photos/stack.jpg", description: "A door partly open.")
-                .resizable()
-                .width(4)
-
-            Image("/images/photos/wind.jpg", description: "A windy day.")
-                .resizable()
-                .width(4)
-        }
-        .margin(.bottom, .xLarge)
-
-        Text("Wrapping items")
-            .font(.title1)
-
-        Text("""
-        If you place more than 12 columns of items in a grid, they will wrap automatically. \
-        For example, this uses four pictures of width 4, causing one to wrap to the next line:
-        """)
-
-        CodeBlock(.swift) {
-            """
-            Grid(alignment: .leading) {
-                Image("/images/photos/shades.jpg", description: "A pair of sunglasses.")
-                    .resizable()
-                    .width(4)
-
-                Image("/images/photos/stack.jpg", description: "A door partly open.")
-                    .resizable()
-                    .width(4)
-
-                Image("/images/photos/rug.jpg", description: "A nice rug.")
-                    .resizable()
-                    .width(4)
-
-                Image("/images/photos/car.jpg", description: "The window of a car.")
-                    .resizable()
-                    .width(4)
-            }
-            """
-        }
-
-        Grid(alignment: .leading) {
-            Image("/images/photos/shades.jpg", description: "A pair of sunglasses.")
-                .resizable()
-                .width(4)
-
-            Image("/images/photos/stack.jpg", description: "A door partly open.")
-                .resizable()
-                .width(4)
-
-            Image("/images/photos/rug.jpg", description: "A nice rug.")
-                .resizable()
-                .width(4)
-
-            Image("/images/photos/car.jpg", description: "The window of a car.")
-                .resizable()
-                .width(4)
-        }
-        .margin(.bottom, .xLarge)
-
-        Text("Although 12 columns is the default, you can adjust it downwards if needed. For example, this uses a 2-column grid:")
-
-        CodeBlock(.swift) {
-            """
-            Grid {
-                Image("/images/photos/shades.jpg", description: "A pair of sunglasses.")
-                    .resizable()
-
-                Image("/images/photos/stack.jpg", description: "A door partly open.")
-                    .resizable()
-
-                Image("/images/photos/rug.jpg", description: "A nice rug.")
-                    .resizable()
-
-                Image("/images/photos/car.jpg", description: "The window of a car.")
-                    .resizable()
-            }
-            .columns(2)
-            """
-        }
-
-        Grid {
-            Image("/images/photos/shades.jpg", description: "A pair of sunglasses.")
-                .resizable()
-
-            Image("/images/photos/stack.jpg", description: "A door partly open.")
-                .resizable()
-
-            Image("/images/photos/rug.jpg", description: "A nice rug.")
-                .resizable()
-
-            Image("/images/photos/car.jpg", description: "The window of a car.")
-                .resizable()
-        }
-        .columns(2)
+        .padding(25)
+        .ignorePageGutters()
     }
+    
+    var sections: [LegalNoticeSections] = [
+        LegalNoticeSections(
+            title: "Contact",
+            detail:
+            """
+            Till Brügmann<br />
+            Trivastraße 15b, 80637 Munich, Germany<br />
+            <br />
+            Phone: +49 179 6665448<br />
+            Email: till.bruegmann@stoobit.com
+            """
+        ),
+        LegalNoticeSections(
+            title: "Liability for Content",
+            detail:
+            """
+            The contents of our website were created with great care. However, we cannot guarantee that the content is complete and up-to-date. As a service provider, we are responsible for our own content on these pages according to Section 7, Paragraph 1 of the German Telemedia Act (TMG). According to §§ 8 to 10 TMG, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information according to general laws remain unaffected. However, liability in this regard is only possible from the point in time at which knowledge of a specific infringement of the law is known. As soon as we become aware of any violations of the law, we will remove this content immediately.
+            """
+        ),
+        LegalNoticeSections(
+            title: "Liability for Links",
+            detail:
+            """
+            Our offer contains links to external third-party websites, the content of which we have no influence on. Therefore we cannot assume any liability for this external content. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking. However, a permanent concrete control of the linked pages is not reasonable without concrete indications of an infringement. As soon as we become aware of legal violations, we will remove such links immediately.
+            """
+        ),
+        LegalNoticeSections(
+            title: "Copyright",
+            detail:
+            """
+            The content on this website created by the site operators are subject to German copyright law. The duplication, processing, distribution and any kind of usage outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use. Insofar as the content on this page was not created by the operator, the copyrights of third parties are respected. In particular contents of third parties are marked as such. Should you nevertheless become aware of a copyright infringement, we ask that you inform us accordingly. As soon as we become aware of legal violations, we will remove such content immediately.
+            """
+        ),
+        LegalNoticeSections(
+            title: "Privacy",
+            detail:
+            """
+            Our website can usually be used without providing any personal data. Insofar as personal data (e.g. name, address or e-mail addresses) is collected on our website, this is always done on a voluntary basis as far as possible. This data will not be passed on to third parties without your express consent. We would like to point out that data transmission on the Internet (e.g. when communicating by e-mail) can have security gaps. A complete protection of the data against access by third parties is not possible. The use of contact data published as part of the imprint obligation by third parties to send unsolicited advertising and information material is hereby expressly prohibited. The site operators expressly reserve the right to take legal action in the event of unsolicited advertising being sent, such as spam e-mails.
+            """
+        ),
+    ]
+}
+
+struct LegalNoticeSections {
+    var title: String
+    var detail: String
 }
