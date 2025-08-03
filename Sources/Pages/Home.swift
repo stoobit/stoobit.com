@@ -11,6 +11,7 @@ struct Home: StaticPage {
         VStack(alignment: .leading, spacing: 20) {
             ContactCard
             VitalityPro
+            AllProjects
         }
         .frame(width: .percent(100%))
         .padding(.bottom, 20)
@@ -56,7 +57,6 @@ struct Home: StaticPage {
                 .style(.textDecoration, "none")
                 .style(.borderRadius, "9999px")
                 .style(.fontWeight, "600")
-                .style(.transition, "background-color 0.3s ease")
                 
                 Text("Questions? Ideas? Just say hello!")
                     .font(.small)
@@ -111,23 +111,64 @@ struct Home: StaticPage {
                     .foregroundStyle(Color.gray)
             }
            
-            let target = "https://apps.apple.com/us/app/vitality-pro/id6478023736"
-            
-            Link(target: target) {
-                Span("View on the App Store")
+            VStack(spacing: 10) {
+                let buttonWidth: Int = 250
+                
+                let appstore = "https://apps.apple.com/us/app/vitality-pro/id6478023736"
+                let ssc = "https://developer.apple.com/swift-student-challenge/"
+                
+                Link(target: appstore) {
+                    Span("View on the App Store")
+                }
+                .frame(width: buttonWidth)
+                .target(.blank)
+                .style(.display, "inline-block")
+                .style(.padding, "10px 24px")
+                .style(.backgroundColor, "#FF9230")
+                .style(.color, "white")
+                .style(.textDecoration, "none")
+                .border(Color(hex: "#FF9230"), width: 2)
+                .style(.borderRadius, "9999px")
+                .style(.fontWeight, "600")
+                
+                Link(target: ssc) {
+                    Span("Swift Student Challenge")
+                }
+                .frame(width: buttonWidth)
+                .target(.blank)
+                .style(.display, "inline-block")
+                .style(.padding, "10px 24px")
+                .style(.backgroundColor, "#00000000")
+                .border(Color(hex: "#FF9230"), width: 2)
+                .style(.color, "black")
+                .style(.textDecoration, "none")
+                .style(.borderRadius, "9999px")
+                .style(.fontWeight, "600")
             }
-            .target(.blank)
-            .style(.display, "inline-block")
-            .style(.padding, "10px 24px")
-            .style(.backgroundColor, "#FF9230")
-            .style(.color, "white")
-            .style(.textDecoration, "none")
-            .style(.borderRadius, "9999px")
-            .style(.fontWeight, "600")
-            .style(.transition, "background-color 0.3s ease")
         }
         .style(.textAlign, "center")
         .frame(height: .percent(100%))
         .padding(.horizontal, 20)
+    }
+    
+    // All Projects
+    var AllProjects: some HTML {
+        HStack {
+            Spacer()
+            
+            Link(Span("All Projects"), target: Projects())
+                .style(.display, "inline-block")
+                .style(.padding, "10px 24px")
+                .style(.backgroundColor, "#007BFF")
+                .style(.color, "white")
+                .style(.textDecoration, "none")
+                .style(.borderRadius, "9999px")
+                .style(.fontWeight, "600")
+            
+            Spacer()
+        }
+        .padding(30)
+        .frame(width: .percent(100%))
+        .background(Color(hex: "#F5F5F8"))
     }
 }
