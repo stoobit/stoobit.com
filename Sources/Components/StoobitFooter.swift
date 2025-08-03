@@ -15,15 +15,18 @@ struct StoobitFooter: HTML {
             links: [
                 FooterLink(
                     title: "X",
-                    target: "https://x.com/stoobitofficial"
+                    target: "https://x.com/stoobitofficial",
+                    openNew: true
                 ),
                 FooterLink(
                     title: "AppStore",
-                    target: "https://apps.apple.com/us/developer/petra-bruegmann/id1690039205"
+                    target: "https://apps.apple.com/us/developer/petra-bruegmann/id1690039205",
+                    openNew: true
                 ),
                 FooterLink(
                     title: "GitHub",
-                    target: "https://github.com/stoobit"
+                    target: "https://github.com/stoobit",
+                    openNew: true
                 )
             ]
         ),
@@ -32,15 +35,15 @@ struct StoobitFooter: HTML {
             links: [
                 FooterLink(
                     title: "About Me",
-                    target: "stoobit.com"
+                    target: AboutMe().path
                 ),
                 FooterLink(
                     title: "Privacy Policy",
-                    target: "stoobit.com"
+                    target: PrivacyPolicy().path
                 ),
                 FooterLink(
                     title: "Legal Notice",
-                    target: "stoobit.com"
+                    target: LegalNotice().path
                 )
             ]
         ),
@@ -58,6 +61,9 @@ struct StoobitFooter: HTML {
                             ForEach(category.links) { link in
                                 Link(link.title, target: link.target)
                                     .role(.none)
+                                    .target(
+                                        link.openNew ? .blank : .default
+                                    )
                             }
                         }
                     }
@@ -92,4 +98,6 @@ struct FooterCategory {
 struct FooterLink {
     var title: String
     var target: String
+    
+    var openNew: Bool = false
 }

@@ -2,7 +2,7 @@ import Foundation
 import Ignite
 
 struct Home: StaticPage {
-    var title = "Home"
+    var title = "Spotlight"
 
     var body: some HTML {
         VStack(alignment: .leading, spacing: 20) {

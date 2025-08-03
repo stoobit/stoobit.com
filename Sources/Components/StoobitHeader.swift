@@ -10,13 +10,8 @@ import Ignite
 struct StoobitHeader: HTML {
     var body: some HTML {
         NavigationBar {
-            Link(target: "https://github.com/twostraws/Ignite") {
-                Span("Apps")
-            }
-            
-            Link(target: "https://github.com/twostraws/Ignite") {
-                Span("Blog")
-            }
+            Link(Span("Projects"), target: Projects())
+            Link(Span("Blog"), target: Blog())
             
             Link(target: "mailto:till.bruegmann@stoobit.com") {
                 Span("Contact")
