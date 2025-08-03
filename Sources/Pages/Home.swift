@@ -17,6 +17,7 @@ struct Home: StaticPage {
         .ignorePageGutters()
     }
     
+    // Contact Card
     var ContactCard: some HTML {
         VStack(spacing: 40) {
             VStack(spacing: 10) {
@@ -67,56 +68,65 @@ struct Home: StaticPage {
         .frame(width: .percent(100%))
         .background(Color(hex: "#F5F5F8"))
     }
+    
+    // Vitality Pro
     var VitalityPro: some HTML {
-        HStack {
-            Image(
-                "/images/vitality_pro_preview.jpeg",
-                description: "Two screenshots of Vitality Pro."
-            )
-            .resizable()
-            .width(5)
+        VStack {
+            VitalityProText
+                .class("col-md-6 order-1 order-md-2 pb-5 pb-md-0")
             
-            Spacer()
-            
-            VStack(spacing: 25) {
-                Image(
-                    "/icons/swift.svg",
-                    description: "The Swift Logo."
-                )
-                .resizable()
-                .frame(width: .px(100), height: .px(100))
-                
-                VStack(spacing: 5) {
-                    Text("Vitality Pro")
-                        .font(.title1)
-                        .fontWeight(.bold)
-                    
-                    Text("Swift Student Challenge Winner")
-                        .font(.title4)
-                        .fontWeight(.regular)
-                        .foregroundStyle(Color.gray)
-                }
-               
-                let target = "https://apps.apple.com/us/app/vitality-pro/id6478023736"
-                
-                Link(target: target) {
-                    Span("View on the App Store")
-                }
-                .target(.blank)
-                .style(.display, "inline-block")
-                .style(.padding, "10px 24px")
-                .style(.backgroundColor, "#FF9230")
-                .style(.color, "white")
-                .style(.textDecoration, "none")
-                .style(.borderRadius, "9999px")
-                .style(.fontWeight, "600")
-                .style(.transition, "background-color 0.3s ease")
-            }
-            .style(.textAlign, "center")
-            .frame(height: .percent(100%))
+            VitalityProImage
+                .class("col-md-6 order-2 order-md-1")
         }
+        .class("row g-0 flex-column flex-md-row align-items-center")
         .padding(50)
         .frame(width: .percent(100%))
         .background(Color(hex: "#F5F5F8"))
+    }
+    var VitalityProImage: some HTML {
+        Image(
+            "/images/vitality_pro_preview.jpeg",
+            description: "Two screenshots of Vitality Pro."
+        )
+        .resizable()
+        .width(5)
+    }
+    var VitalityProText: some HTML {
+        VStack(spacing: 25) {
+            Image(
+                "/icons/swift.svg",
+                description: "The Swift Logo."
+            )
+            .resizable()
+            .frame(width: .px(100), height: .px(100))
+            
+            VStack(spacing: 5) {
+                Text("Vitality Pro")
+                    .font(.title1)
+                    .fontWeight(.bold)
+                
+                Text("Swift Student Challenge Winner")
+                    .font(.title4)
+                    .fontWeight(.regular)
+                    .foregroundStyle(Color.gray)
+            }
+           
+            let target = "https://apps.apple.com/us/app/vitality-pro/id6478023736"
+            
+            Link(target: target) {
+                Span("View on the App Store")
+            }
+            .target(.blank)
+            .style(.display, "inline-block")
+            .style(.padding, "10px 24px")
+            .style(.backgroundColor, "#FF9230")
+            .style(.color, "white")
+            .style(.textDecoration, "none")
+            .style(.borderRadius, "9999px")
+            .style(.fontWeight, "600")
+            .style(.transition, "background-color 0.3s ease")
+        }
+        .style(.textAlign, "center")
+        .frame(height: .percent(100%))
     }
 }
