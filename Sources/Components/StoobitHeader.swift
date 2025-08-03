@@ -22,7 +22,7 @@ struct StoobitHeader: HTML {
                     .foregroundStyle(Color.black)
                 
                 Span("bit")
-                    .foregroundStyle(Color(hex: "#4169e1"))
+                    .foregroundStyle(.bootstrapBlue)
             }
             .font(.title4)
             .fontWeight(.bold)
