@@ -67,7 +67,7 @@ struct StoobitFooter: HTML {
                             }
                         }
                     }
-                    .frame(width: .vw((100 / categories.count)%))
+                    .frame(width: .vw((99 / categories.count)%))
                 }
             }
             .padding(.vertical, 35)
