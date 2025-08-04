@@ -209,22 +209,18 @@ struct Home: StaticPage {
             
             VStack(spacing: 10) {
                 let buttonWidth: Int = 250
-                
-                let learnmore = "https://apps.apple.com/us/app/vitality-pro/id6478023736"
                 let check24 = "https://www.talents.check24.de/"
                 
-                Link(target: learnmore) {
-                    Span("Learn More")
-                }
-                .border(Color.bootstrapBlue, width: 2)
-                .frame(width: buttonWidth)
-                .style(.display, "inline-block")
-                .style(.padding, "10px 24px")
-                .background(Color.bootstrapBlue)
-                .style(.color, "white")
-                .style(.textDecoration, "none")
-                .style(.borderRadius, "9999px")
-                .style(.fontWeight, "600")
+                Link(Span("Learn More"), target: AboutStoobitAnalytics())
+                    .border(Color.bootstrapBlue, width: 2)
+                    .frame(width: buttonWidth)
+                    .style(.display, "inline-block")
+                    .style(.padding, "10px 24px")
+                    .background(Color.bootstrapBlue)
+                    .style(.color, "white")
+                    .style(.textDecoration, "none")
+                    .style(.borderRadius, "9999px")
+                    .style(.fontWeight, "600")
                 
                 Link(target: check24) {
                     Span("About the Scholarship")

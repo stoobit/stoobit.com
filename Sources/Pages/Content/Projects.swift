@@ -6,66 +6,119 @@
 //
 
 import Ignite
+import Foundation
 
 struct Projects: StaticPage {
     var title = "Projects"
     var description = ""
     
     var body: some HTML {
-        ForEach(projects) { project in
-            ImageModal(project: project)
-        }
-        
         VStack(alignment: .leading, spacing: 30) {
             Text("Projects")
                 .font(.title1)
                 .fontWeight(.bold)
-
+            
             Grid(spacing: 20) {
-                ForEach(projects) { project in
+                ForEach(projects.sorted {
+                    $0.title.lowercased() < $1.title.lowercased()
+                }) { project in
                     VStack {
                         ZStack {
-                            Image("")
-                            
-                            VStack(alignment: .trailing) {
-                                let size: Int = 40
-                                Span {
-                                    Image("/icons/photo.svg")
-                                        .resizable()
-                                        .style(.width, "50%")
-                                        .style(.height, "50%")
-                                }
-                                .style(.width, "\(size)px")
-                                .style(.height, "\(size)px")
-                                .background(Material.ultraThickMaterial)
-                                .style(.borderRadius, "50%")
-                                .style(.display, "flex")
-                                .style(.justifyContent, "center")
-                                .style(.alignItems, "center")
-                                .cursor(.pointer)
-                                .onClick {
-                                    ShowModal(id: project.id)
-                                }
-                            }
-                            .padding(9)
-                            .frame(
-                                minWidth: .percent(100%),
-                                minHeight: .percent(100%),
-                                alignment: .topLeading
-                            )
+                            Image("/icons/\(project.headerImage)")
+                                .resizable()
+                                .frame(
+                                    width: .percent(60%),
+                                    height: .px(160)
+                                )
+                                .style(.objectFit, "contain")
                         }
-                        .frame(minWidth: .percent(100%), minHeight: .px(200))
-                        .background(Color.red)
+                        .frame(minWidth: .percent(100%), minHeight: .px(250))
+                        .background(project.headerGradient)
                         
-                        VStack {
+                        VStack(spacing: 35) {
                             VStack(alignment: .leading) {
                                 Text(project.title)
                                     .font(.title3)
                                     .fontWeight(.bold)
+                                
+                                Text(project.subtitle)
+                                    .foregroundStyle(Color.gray)
                             }
                             .frame(minWidth: .percent(100%))
                             
-                           
+                            VStack(spacing: 10) {
+                                let buttonWidth: Int = 250
+                                
+                                if let title = project.secondaryTitle,
+                                   let destination = project.secondaryDestination {
+                                    Link(target: project.primaryDestination) {
+                                        Span(project.primaryTitle)
+                                    }
+                                    .frame(width: buttonWidth)
+                                    .target(.blank)
+                                    .style(.display, "inline-block")
+                                    .style(.padding, "10px 24px")
+                                    .style(.backgroundColor, "#007BFF")
+                                    .style(.color, "white")
+                                    .style(.textDecoration, "none")
+                                    .style(.borderRadius, "9999px")
+                                    .style(.fontWeight, "600")
+                                    .style(.textAlign, "center")
+                                    .border(Color.bootstrapBlue, width: 2)
+                                    
+                                    Link(target: destination) {
+                                        Span(title)
+                                    }
+                                    .frame(width: buttonWidth)
+                                    .target(.blank)
+                                    .style(.display, "inline-block")
+                                    .style(.padding, "10px 24px")
+                                    .style(.backgroundColor, "#00000000")
+                                    .style(.color, "black")
+                                    .style(.textDecoration, "none")
+                                    .style(.borderRadius, "9999px")
+                                    .style(.fontWeight, "600")
+                                    .style(.textAlign, "center")
+                                    .border(Color.bootstrapBlue, width: 2)
+                                } else {
+                                    Link(target: " ") {
+                                        Span("Hello, World")
+                                    }
+                                    .frame(width: buttonWidth)
+                                    .target(.blank)
+                                    .style(.display, "inline-block")
+                                    .style(.padding, "10px 24px")
+                                    .style(.backgroundColor, "#00000000")
+                                    .style(.color, "#00000000")
+                                    .style(.textDecoration, "none")
+                                    .style(.borderRadius, "9999px")
+                                    .style(.fontWeight, "600")
+                                    .style(.textAlign, "center")
+                                    .style(.pointerEvents, "none")
+                                    .border(Color(hex: "#00000000"), width: 2)
+                                    .style(.userSelect, "none")
+                                    .cursor(.default)
+                                    
+                                    Link(target: project.primaryDestination) {
+                                        Span(project.primaryTitle)
+                                    }
+                                    .frame(width: buttonWidth)
+                                    .target(.blank)
+                                    .style(.display, "inline-block")
+                                    .style(.padding, "10px 24px")
+                                    .style(.backgroundColor, "#007BFF")
+                                    .style(.color, "white")
+                                    .style(.textDecoration, "none")
+                                    .style(.borderRadius, "9999px")
+                                    .style(.fontWeight, "600")
+                                    .style(.textAlign, "center")
+                                    .border(Color.bootstrapBlue, width: 2)
+                                }
+                                
+                                Text(project.plattformString())
+                                    .foregroundStyle(Color.gray)
+                                    .font(.small)
+                            }
                         }
                         .frame(minWidth: .percent(100%))
                         .padding(20)
@@ -80,38 +133,146 @@ struct Projects: StaticPage {
         .padding(40)
         .ignorePageGutters()
     }
-    
-    let projects: [Project] = [
-        Project(title: "Productivity Pro", headerImage: ""),
-        Project(title: "Vitality Pro", headerImage: ""),
-        Project(title: "Urban Green", headerImage: ""),
-        Project(title: "stoobit search", headerImage: ""),
-        Project(title: "stoobit share", headerImage: ""),
-    ]
-    
-    func ImageModal(project: Project) -> some HTML {
-        Modal(id: project.id) {
-            Section {
-                Button().role(.close).onClick {
-                    DismissModal(id: project.id)
-                }
-            }
-            .horizontalAlignment(.trailing)
-
-            Text(project.title)
-                .horizontalAlignment(.center)
-                .font(.title3)
-                .margin(.xLarge)
-        }
-        .size(.xLarge)
-        .style(.borderRadius, "60px")
-    }
 }
 
 struct Project: Identifiable {
     var id: String = UUID().uuidString
     
     var title: String
+    var subtitle: String
     
     var headerImage: String
+    var headerGradient: Gradient
+    
+    var primaryTitle: String
+    var primaryDestination: String
+    
+    var secondaryTitle: String?
+    var secondaryDestination: String?
+    
+    var plattforms: [String]
+    func plattformString() -> String {
+        var string = ""
+        
+        for (index, app) in plattforms.sorted().enumerated() {
+            string += app
+            if index < plattforms.count - 1 {
+                string += "  •  "
+            }
+        }
+        
+        return string
+    }
 }
+
+@MainActor
+let projects: [Project] = [
+    Project(
+        title: "iShare QR",
+        subtitle: "Share your files via QR codes.",
+        headerImage: "qrcode.svg",
+        headerGradient: Gradient(
+            colors: [
+                Color(hex: "#008AFF"),
+                Color(hex: "#00D3FF")
+            ],
+            type: .linear(angle: 0)
+        ),
+        primaryTitle: "View on the App Store",
+        primaryDestination: "https://apps.apple.com/us/app/ishare-qr/id6673915598",
+        secondaryTitle: "View on GitHub",
+        secondaryDestination: "https://github.com/stoobit/iShare-QR",
+        plattforms: ["iPadOS", "iOS"]
+    ),
+    Project(
+        title: "stoobit search",
+        subtitle: "A beautiful way to search the web.",
+        headerImage: "magnifyingglass.svg",
+        headerGradient: Gradient(
+            colors: [
+                Color.bootstrapBlue
+                    .opacity(0.87),
+                Color.bootstrapPurple
+                    .opacity(0.87),
+                Color.bootstrapRed
+                    .opacity(0.87),
+                Color.bootstrapOrange
+                    .opacity(0.87),
+                Color.bootstrapYellow
+                    .opacity(0.9)
+            ],
+            type: .linear(angle: 90)
+        ),
+        primaryTitle: "View on the App Store",
+        primaryDestination: "https://apps.apple.com/us/app/stoobit-search/id6737627667",
+        plattforms: ["iOS"]
+    ),
+    Project(
+        title: "Urban Green",
+        subtitle: "Let's make your city bloom.",
+        headerImage: "leaf.svg",
+        headerGradient: Gradient(
+            colors: [
+                Color(hex: "#007F24"),
+               Color(hex: "#00B000")
+            ],
+            type: .linear(angle: 0)
+        ),
+        primaryTitle: "YouTube",
+        primaryDestination: "https://www.youtube.com/watch?v=IiVwdiye4EQ",
+        secondaryTitle: "Gemini Dev Competition",
+        secondaryDestination: "https://ai.google.dev/competition/projects/urban-green",
+        plattforms: ["iOS"]
+    ),
+    Project(
+        title: "Vitality Pro",
+        subtitle: "Stay healthy.",
+        headerImage: "carrot.png",
+        headerGradient: Gradient(
+            colors: [
+                Color(hex: "#181818"),
+                Color(hex: "#2B2B2B")
+            ],
+            type: .linear(angle: 0)
+        ),
+        primaryTitle: "View on the App Store",
+        primaryDestination: "https://apps.apple.com/de/app/vitality-pro/id6478023736",
+        secondaryTitle: "View on GitHub",
+        secondaryDestination: "https://github.com/stoobit/Vitality-Pro",
+        plattforms: ["iOS"]
+    ),
+    Project(
+        title: "stoobit analytics",
+        subtitle: "See what matters. Ship what works.",
+        headerImage: "analytics.svg",
+        headerGradient: Gradient(
+            colors: [
+                Color(hex: "#FFFFFF"),
+                Color(hex: "#F5F5F8"),
+            ],
+            type: .linear(angle: 0)
+        ),
+        primaryTitle: "Visit Website",
+        primaryDestination: "https://analytics.stoobit.com/",
+        secondaryTitle: "Learn More",
+        secondaryDestination: AboutStoobitAnalytics().path,
+        plattforms: ["iOS", "Android", "Web"]
+    ),
+    Project(
+        title: "Productivity Pro",
+        subtitle: "Notes, Schedules & To-Dos",
+        headerImage: "light.png",
+        headerGradient: Gradient(
+            colors: [
+                Color(hex: "#181818"),
+                Color(hex: "#2B2B2B")
+            ],
+            type: .linear(angle: 0)
+        ),
+        primaryTitle: "View on the App Store",
+        primaryDestination: "https://apps.apple.com/us/app/productivity-pro/id6449678571",
+        secondaryTitle: "View on GitHub",
+        secondaryDestination: "https://github.com/stoobit/Productivity-Pro",
+        plattforms: ["iPadOS"]
+    ),
+]
