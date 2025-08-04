@@ -17,8 +17,9 @@ struct Projects: StaticPage {
             Text("Projects")
                 .font(.title1)
                 .fontWeight(.bold)
+                .padding(.leading, 20)
             
-            Grid(spacing: 20) {
+            Grid(spacing: 15) {
                 ForEach(projects.sorted {
                     $0.title.lowercased() < $1.title.lowercased()
                 }) { project in
@@ -127,11 +128,11 @@ struct Projects: StaticPage {
                     .clipped()
                     .cornerRadius(27)
                     .background(Color(hex: "#F5F5F8"))
+                    .margin(15)
                 }
             }
         }
-        .padding(40)
-        .ignorePageGutters()
+        .padding(.vertical, 40)
     }
 }
 
