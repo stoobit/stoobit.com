@@ -67,7 +67,7 @@ struct StoobitFooter: HTML {
                             }
                         }
                     }
-                    .frame(width: .vw((99 / categories.count)%))
+                    .style(.width, "50vw")
                 }
             }
             .padding(.vertical, 35)
@@ -78,6 +78,7 @@ struct StoobitFooter: HTML {
                 .padding(.bottom, 15)
         }
         .background(Color(hex: "#F5F5F8"))
+        .style(.overflowX, "hidden")
         .ignorePageGutters()
     }
     
