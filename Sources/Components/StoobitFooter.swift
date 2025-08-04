@@ -19,7 +19,7 @@ struct StoobitFooter: HTML {
                     openNew: true
                 ),
                 FooterLink(
-                    title: "AppStore",
+                    title: "App Store",
                     target: "https://apps.apple.com/us/developer/petra-bruegmann/id1690039205",
                     openNew: true
                 ),
