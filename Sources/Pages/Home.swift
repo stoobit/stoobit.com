@@ -249,40 +249,66 @@ struct Home: StaticPage {
     // All Projects
     var AllProjects: some HTML {
         HStack(alignment: .center) {
-            ForEach(1...200) { item in
-                Image(
-                    "/images/stoobit_analytics_preview.png",
-                    description: "A screenshot of stoobit analytics."
-                )
-                .resizable()
-                .frame(width: .px(50), height: .px(50))
-            }
-            
-            Link(Span("All Projects"), target: Projects())
-                .border(Color.bootstrapBlue, width: 2)
-                .frame(minWidth: 150)
-                .style(.display, "inline-block")
-                .style(.padding, "10px 24px")
-                .background(Color.bootstrapBlue)
-                .style(.color, "white")
-                .style(.textDecoration, "none")
-                .style(.borderRadius, "9999px")
-                .style(.fontWeight, "600")
-                .style(.textAlign, "center")
-            
-            ForEach(1...200) { item in
-                Image(
-                    "/images/stoobit_analytics_preview.png",
-                    description: "A screenshot of stoobit analytics."
-                )
-                .resizable()
-                .frame(width: .px(50), height: .px(50))
+            ZStack {
+                VStack {
+                    ForEach(1...5) { _ in
+                       Text(generateString())
+                            .style(.whiteSpace, "nowrap")
+                            .font(.small)
+                            .foregroundStyle(Color.gray.opacity(0.5))
+                    }
+                }
+                .frame(width: .percent(100%))
+                
+                Link(Span("All Projects"), target: Projects())
+                    .border(Color(hex: "#F5F5F8"), width: 5)
+                    .frame(minWidth: 150)
+                    .style(.display, "inline-block")
+                    .style(.padding, "10px 24px")
+                    .background(Color.bootstrapBlue)
+                    .style(.color, "white")
+                    .style(.textDecoration, "none")
+                    .style(.borderRadius, "9999px")
+                    .style(.fontWeight, "600")
+                    .style(.textAlign, "center")
             }
         }
         .style(.justifyContent, "center")
         .style(.overflow, "hidden")
-        .padding(30)
+        .padding(10)
         .frame(width: .percent(100%))
         .background(Color(hex: "#F5F5F8"))
     }
+    
+    func generateString() -> String {
+        var string = ""
+        let array = (apps + apps).shuffled()
+
+        for (index, app) in array.enumerated() {
+            string += app
+            if index < array.count - 1 {
+                string += "  •  "
+            }
+        }
+
+        return string
+    }
 }
+
+let apps: [String] = [
+    // Apps
+    "Productivity Pro",
+    "Vitality Pro",
+    "stoobit analytics",
+    "stoobit share",
+    "stoobit search",
+    "Urban Green",
+    
+    // Technologies
+    "Swift", "Go", "Python",
+    "SwiftUI", "React", "Flutter",
+    "Artificial Intelligence",
+    "iOS Development",
+    "Web Development",
+    
+]
