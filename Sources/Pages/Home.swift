@@ -49,15 +49,15 @@ struct Home: StaticPage {
             
             VStack(spacing: 13) {
                 HStack {
-//                    Link(Span("About Me"), target: AboutMe())
-//                        .style(.display, "inline-block")
-//                        .style(.padding, "10px 24px")
-//                        .style(.backgroundColor, "#00000000")
-//                        .border(Color.bootstrapBlue, width: 2)
-//                        .style(.color, "black")
-//                        .style(.textDecoration, "none")
-//                        .style(.borderRadius, "9999px")
-//                        .style(.fontWeight, "600")
+                    //                    Link(Span("About Me"), target: AboutMe())
+                    //                        .style(.display, "inline-block")
+                    //                        .style(.padding, "10px 24px")
+                    //                        .style(.backgroundColor, "#00000000")
+                    //                        .border(Color.bootstrapBlue, width: 2)
+                    //                        .style(.color, "black")
+                    //                        .style(.textDecoration, "none")
+                    //                        .style(.borderRadius, "9999px")
+                    //                        .style(.fontWeight, "600")
                     
                     Link(target: "mailto:till.bruegmann@stoobit.com") {
                         Span("Contact Me")
@@ -206,7 +206,7 @@ struct Home: StaticPage {
                     .fontWeight(.regular)
                     .foregroundStyle(Color.gray)
             }
-           
+            
             VStack(spacing: 10) {
                 let buttonWidth: Int = 250
                 
@@ -248,20 +248,39 @@ struct Home: StaticPage {
     
     // All Projects
     var AllProjects: some HTML {
-        HStack {
-            Spacer()
+        HStack(alignment: .center) {
+            ForEach(1...200) { item in
+                Image(
+                    "/images/stoobit_analytics_preview.png",
+                    description: "A screenshot of stoobit analytics."
+                )
+                .resizable()
+                .frame(width: .px(50), height: .px(50))
+            }
             
             Link(Span("All Projects"), target: Projects())
+                .border(Color.bootstrapBlue, width: 2)
+                .frame(minWidth: 150)
                 .style(.display, "inline-block")
                 .style(.padding, "10px 24px")
-                .style(.backgroundColor, "#007BFF")
+                .background(Color.bootstrapBlue)
                 .style(.color, "white")
                 .style(.textDecoration, "none")
                 .style(.borderRadius, "9999px")
                 .style(.fontWeight, "600")
+                .style(.textAlign, "center")
             
-            Spacer()
+            ForEach(1...200) { item in
+                Image(
+                    "/images/stoobit_analytics_preview.png",
+                    description: "A screenshot of stoobit analytics."
+                )
+                .resizable()
+                .frame(width: .px(50), height: .px(50))
+            }
         }
+        .style(.justifyContent, "center")
+        .style(.overflow, "hidden")
         .padding(30)
         .frame(width: .percent(100%))
         .background(Color(hex: "#F5F5F8"))
