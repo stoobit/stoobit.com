@@ -261,7 +261,7 @@ let projects: [Project] = [
     ),
     Project(
         title: "Productivity Pro",
-        subtitle: "Notes, Schedules & To-Dos",
+        subtitle: "Notes, Schedules & To-Dos.",
         headerImage: "light.png",
         headerGradient: Gradient(
             colors: [
