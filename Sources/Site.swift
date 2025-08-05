@@ -38,7 +38,6 @@ struct StoobitWebsite: Site {
         AboutMe()
         LegalNotice()
         PrivacyPolicy()
-        AboutStoobitAnalytics()
         
         // Content Pages
         Projects()

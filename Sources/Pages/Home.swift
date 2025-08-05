@@ -209,9 +209,11 @@ struct Home: StaticPage {
             
             VStack(spacing: 10) {
                 let buttonWidth: Int = 250
+                let analytics = "https://analytics.stoobit.com/"
                 let check24 = "https://www.talents.check24.de/"
                 
-                Link(Span("Learn More"), target: AboutStoobitAnalytics())
+                Link(Span("Learn More"), target: analytics)
+                    .target(.blank)
                     .border(Color.bootstrapBlue, width: 2)
                     .frame(width: buttonWidth)
                     .style(.display, "inline-block")

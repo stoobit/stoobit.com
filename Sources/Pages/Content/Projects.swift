@@ -255,8 +255,6 @@ let projects: [Project] = [
         ),
         primaryTitle: "Visit Website",
         primaryDestination: "https://analytics.stoobit.com/",
-        secondaryTitle: "Learn More",
-        secondaryDestination: AboutStoobitAnalytics().path,
         plattforms: ["iOS", "Android", "Web"]
     ),
     Project(
