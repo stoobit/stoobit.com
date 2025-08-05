@@ -25,7 +25,7 @@ struct Projects: StaticPage {
                 }) { project in
                     VStack {
                         ZStack {
-                            Image("/icons/\(project.headerImage)")
+                            Image(decorative: "/icons/\(project.headerImage)")
                                 .resizable()
                                 .frame(
                                     width: .percent(60%),

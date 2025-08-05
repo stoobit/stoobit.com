@@ -43,6 +43,10 @@ struct StoobitWebsite: Site {
         Projects()
         Blog()
     }
+    
+    var articlePages: [any ArticlePage] {
+        Story()
+    }
 }
 
 struct StoobitRobots: RobotsConfiguration {
