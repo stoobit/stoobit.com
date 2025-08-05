@@ -27,7 +27,7 @@ struct Blog: StaticPage {
                 }) { article in
                     VStack {
                         ZStack {
-                            Image(decorative: "/icons/post.svg")
+                            Image(decorative: "/assets/post.svg")
                                 .resizable()
                                 .frame(
                                     width: .percent(60%),

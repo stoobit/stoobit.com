@@ -28,6 +28,8 @@ struct StoobitWebsite: Site {
 
     var author = "Till Brügmann"
     var robotsConfiguration = StoobitRobots()
+    
+    var favicon: URL? = URL(static: "https://www.stoobit.com/assets/favicon.png")
 
     var homePage = Home()
     var layout = MainLayout()

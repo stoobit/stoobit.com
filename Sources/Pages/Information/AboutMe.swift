@@ -15,7 +15,7 @@ struct AboutMe: StaticPage {
     var body: some HTML {
         VStack(alignment: .leading, spacing: 40) {
             VStack(alignment: .center) {
-                Image("/images/memoji.png", description: "Me as a Memoji.")
+                Image("/assets/memoji.png", description: "Me as a Memoji.")
                     .frame(width: .px(230), height: .px(230))
                 
                 VStack(alignment: .leading) {

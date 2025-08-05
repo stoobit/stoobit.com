@@ -99,7 +99,7 @@ struct Home: StaticPage {
     }
     var VitalityProImage: some HTML {
         Image(
-            "/images/vitality_pro_preview.jpeg",
+            "/assets/vitality_pro_preview.jpeg",
             description: "Two screenshots of Vitality Pro."
         )
         .resizable()
@@ -108,7 +108,7 @@ struct Home: StaticPage {
     var VitalityProText: some HTML {
         VStack(spacing: 25) {
             Image(
-                "/icons/swift.svg",
+                "/assets/swift.svg",
                 description: "The Swift logo."
             )
             .resizable()
@@ -181,7 +181,7 @@ struct Home: StaticPage {
     }
     var StoobitAnalyticsImage: some HTML {
         Image(
-            "/images/stoobit_analytics_preview.png",
+            "/assets/stoobit_analytics_preview.png",
             description: "A screenshot of stoobit analytics."
         )
         .resizable()
@@ -190,7 +190,7 @@ struct Home: StaticPage {
     var StoobitAnalyticsText: some HTML {
         VStack(spacing: 25) {
             Image(
-                "/icons/analytics.svg",
+                "/assets/analytics.svg",
                 description: "The stoobit analytics logo."
             )
             .resizable()
