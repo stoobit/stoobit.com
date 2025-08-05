@@ -18,7 +18,7 @@ struct AboutMe: StaticPage {
                 Image("/assets/memoji.png", description: "Me as a Memoji.")
                     .frame(width: .px(230), height: .px(230))
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .center) {
                     Text("Till Brügmann")
                         .font(.title2)
                         .fontWeight(.bold)
