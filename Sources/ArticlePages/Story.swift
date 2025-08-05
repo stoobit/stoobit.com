@@ -15,8 +15,15 @@ struct Story: ArticlePage {
                 Text(article.title)
                     .font(.title2)
                 
-                Text("\(article.estimatedWordCount) Words • \(article.estimatedReadingMinutes) Minutes to Read"
-                )
+                Span {
+                    let count = article.estimatedWordCount
+                    let minutes = article.estimatedReadingMinutes
+                    "\(count) Words • \(minutes) Minutes to Read • "
+                    
+                    if let tags = article.tags {
+                        "\(tags.map { "#\($0)" }.joined(separator: " "))"
+                    }
+                }
                 .foregroundStyle(Color.gray)
             }
             
@@ -28,13 +35,21 @@ struct Story: ArticlePage {
             VStack(alignment: .leading, spacing: 5) {
                 Text(article.text)
                 
-                if let tags = article.tags {
-                    VStack(alignment: .center) {
-                        Text("\(tags.map { "#\($0)" }.joined(separator: " "))")
-                            .foregroundStyle(Color.bootstrapBlue)
+                VStack(alignment: .center) {
+                    Link(target: "/blog") {
+                        Span("All Posts")
                     }
-                    .frame(width: .percent(100%))
+                    .style(.display, "inline-block")
+                    .style(.padding, "10px 24px")
+                    .style(.backgroundColor, "#007BFF")
+                    .style(.color, "white")
+                    .style(.textDecoration, "none")
+                    .style(.borderRadius, "9999px")
+                    .style(.fontWeight, "600")
+                    .frame(width: .px(150))
+                    .style(.textAlign, "center")
                 }
+                .frame(width: .percent(100%))
             }
             .frame(width: .percent(100%))
         }
