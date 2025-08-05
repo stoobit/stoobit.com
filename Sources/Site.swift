@@ -18,7 +18,6 @@ struct StoobitWebsite: Site {
     var name = "stoobit"
     var titleSuffix = " – stoobit"
     var url = URL(static: "https://www.stoobit.com")
-    let favicon = URL(static: "https://www.stoobit.com/assets/favicon.png")
     
     var builtInIconsEnabled = true
     var syntaxHighlighterConfiguration: SyntaxHighlighterConfiguration = .init(
