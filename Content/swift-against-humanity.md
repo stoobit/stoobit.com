@@ -3,7 +3,7 @@ author: Paul Hudson
 description:
 date: 2024-03-06 15:30
 tags: April Fools, Swift
-published: true
+published: false
 image: /images/photos/washing.jpg
 ---
 # Now available to pre-order: Swift Against Humanity

@@ -8,10 +8,15 @@
 import Ignite
 
 struct StoobitHeader: HTML {
+    @Environment(\.articles) var articles
+    
     var body: some HTML {
         NavigationBar {
             Link(Span("Projects"), target: Projects())
-            Link(Span("Blog"), target: Blog())
+            
+            if articles.all.isEmpty == false {
+                Link(Span("Blog"), target: Blog())
+            }
             
             Link(target: "mailto:till.bruegmann@stoobit.com") {
                 Span("Contact")

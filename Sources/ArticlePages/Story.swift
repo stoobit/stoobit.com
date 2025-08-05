@@ -37,7 +37,7 @@ struct Story: ArticlePage {
                 
                 VStack(alignment: .center) {
                     Link(target: "/blog") {
-                        Span("All Posts")
+                        Span("All Articles")
                     }
                     .style(.display, "inline-block")
                     .style(.padding, "10px 24px")
