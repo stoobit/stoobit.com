@@ -3,7 +3,8 @@ import Ignite
 
 struct Home: StaticPage {
     var title = "Spotlight"
-    var description: String = ""
+    var description: String = "Discover my Swift Student Challenge and Check24 Scholarship projects in this spotlight page, and get in touch for collaborations and freelance work."
+
     
     let cardHeight: Int = 350
     

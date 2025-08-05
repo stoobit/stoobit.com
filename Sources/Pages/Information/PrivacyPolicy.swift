@@ -9,6 +9,7 @@ import Ignite
 
 struct PrivacyPolicy: StaticPage {
     var title = "Privacy Policy"
+    var description = "The privacy policy of all services by Till Brügmann."
     
     var body: some HTML {
         VStack(alignment: .leading, spacing: 20) {

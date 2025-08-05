@@ -10,7 +10,7 @@ import Foundation
 
 struct Projects: StaticPage {
     var title = "Projects"
-    var description = ""
+    var description = "Explore my iOS and web development projects, including apps live on the App Store and other creative coding work."
     
     var body: some HTML {
         VStack(alignment: .leading, spacing: 30) {

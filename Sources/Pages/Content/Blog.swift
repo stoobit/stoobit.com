@@ -11,7 +11,7 @@ struct Blog: StaticPage {
     @Environment(\.articles) var articles
     
     var title = "Blog"
-    var description = ""
+    var description = "A blog about iOS and web development, featuring coding tips, tutorials, and interesting programming topics."
 
     var body: some HTML {
         List {

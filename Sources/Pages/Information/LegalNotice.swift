@@ -9,6 +9,7 @@ import Ignite
 
 struct LegalNotice: StaticPage {
     var title = "Legal Notice"
+    var description = "The legal notice of the website stoobit.com."
 
     var body: some HTML {
         VStack(alignment: .leading, spacing: 20) {
