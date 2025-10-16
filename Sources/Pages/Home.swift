@@ -47,30 +47,18 @@ struct Home: StaticPage {
                 .font(.title5)
             }
             
-            VStack(spacing: 13) {
-                HStack {
-                    //                    Link(Span("About Me"), target: AboutMe())
-                    //                        .style(.display, "inline-block")
-                    //                        .style(.padding, "10px 24px")
-                    //                        .style(.backgroundColor, "#00000000")
-                    //                        .border(Color.bootstrapBlue, width: 2)
-                    //                        .style(.color, "black")
-                    //                        .style(.textDecoration, "none")
-                    //                        .style(.borderRadius, "9999px")
-                    //                        .style(.fontWeight, "600")
-                    
-                    Link(target: "mailto:till.bruegmann@stoobit.com") {
-                        Span("Contact Me")
-                    }
-                    .style(.display, "inline-block")
-                    .style(.padding, "10px 24px")
-                    .style(.backgroundColor, "#007BFF")
-                    .style(.color, "white")
-                    .style(.textDecoration, "none")
-                    .border(Color.bootstrapBlue, width: 2)
-                    .style(.borderRadius, "9999px")
-                    .style(.fontWeight, "600")
+            VStack(spacing: 13) { 
+                Link(target: "mailto:till.bruegmann@stoobit.com") {
+                    Span("Contact Me")
                 }
+                .style(.display, "inline-block")
+                .style(.padding, "10px 24px")
+                .style(.backgroundColor, "#007BFF")
+                .style(.color, "white")
+                .style(.textDecoration, "none")
+                .border(Color.bootstrapBlue, width: 2)
+                .style(.borderRadius, "9999px")
+                .style(.fontWeight, "600")
                 
                 Text("Questions? Ideas? Just say hello!")
                     .font(.small)

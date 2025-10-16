@@ -43,6 +43,7 @@ struct StoobitWebsite: Site {
         // Content Pages
         Projects()
         Blog()
+        SupportMe()
     }
     
     var articlePages: [any ArticlePage] {

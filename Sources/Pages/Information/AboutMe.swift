@@ -10,7 +10,6 @@ import Foundation
 
 struct AboutMe: StaticPage {
     var title = "About Me"
-    var description = "Till, a high school student from Munich, develops iOS apps in his free time. Some of his projects are live on the App Store and used worldwide."
 
     var body: some HTML {
         VStack(alignment: .leading, spacing: 40) {

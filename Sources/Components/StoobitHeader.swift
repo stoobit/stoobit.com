@@ -21,6 +21,12 @@ struct StoobitHeader: HTML {
             Link(target: "mailto:till.bruegmann@stoobit.com") {
                 Span("Contact")
             }
+            
+            Link(target: SupportMe().path) {
+                Span("Support Me")
+                    .foregroundStyle(Color.bootstrapBlue)
+            }
+                
         } logo: {
             Span {
                 Span("stoo")
