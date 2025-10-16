@@ -12,103 +12,58 @@ struct SupportMe: StaticPage {
     @Environment(\.articles) var articles
     
     var title = "Support Me"
-
+    
     var body: some HTML {
-        VStack(alignment: .leading, spacing: 30) {
-            Text("Blog")
-                .font(.title1)
-                .fontWeight(.bold)
-                .padding(.leading, 20)
-           
-            Grid(spacing: 15) {
-                ForEach(articles.all.sorted {
-                    $0.title.lowercased() < $1.title.lowercased()
-                }) { article in
-                    VStack {
-                        ZStack {
-                            Image(decorative: "/assets/post.svg")
-                                .resizable()
-                                .frame(
-                                    width: .percent(60%),
-                                    height: .px(160)
-                                )
-                                .style(.objectFit, "contain")
-                        }
-                        .frame(minWidth: .percent(100%), minHeight: .px(250))
-                        .background(Gradient(colors: [
-                            Color(hex: "#008AFF"),
-                            Color(hex: "#00D3FF")
-                        ], type: .linear(angle: 0)))
-                        
-                        VStack(spacing: 35) {
-                            VStack(alignment: .leading) {
-                                Text(article.title)
-                                    .font(.title3)
-                                    .fontWeight(.bold)
-                                
-                                if let author = article.author {
-                                    Text("\(author), \(format(article.date))")
-                                        .foregroundStyle(Color.gray)
-                                }
-                            }
-                            .frame(minWidth: .percent(100%))
-                            
-                            VStack(spacing: 10) {
-                                let buttonWidth: Int = 250
-                                
-                                Link(target: article) {
-                                    Span("Read Article")
-                                }
-                                .style(.display, "inline-block")
-                                .frame(width: buttonWidth)
-                                .style(.padding, "10px 24px")
-                                .style(.backgroundColor, "#007BFF")
-                                .style(.color, "white")
-                                .style(.textDecoration, "none")
-                                .style(.borderRadius, "9999px")
-                                .style(.fontWeight, "600")
-                                .style(.textAlign, "center")
-                                .border(Color.bootstrapBlue, width: 2)
-                                
-                                Text(tagString(article: article))
-                                    .foregroundStyle(Color.gray)
-                                    .font(.small)
-                            }
-                        }
-                        .frame(minWidth: .percent(100%))
-                        .padding(20)
-                    }
-                    .frame(minWidth: .px(330))
-                    .clipped()
-                    .cornerRadius(27)
-                    .background(Color(hex: "#F5F5F8"))
-                    .margin(15)
-                }
+//        VStack {
+//            Button(actions: { transaction }) {
+//                Span("Send")
+//            }
+//            .style(.display, "inline-block")
+//            .style(.padding, "10px 24px")
+//            .style(.backgroundColor, "#007BFF")
+//            .style(.color, "white")
+//            .style(.textDecoration, "none")
+//            .border(Color.bootstrapBlue, width: 2)
+//            .style(.borderRadius, "9999px")
+//            .style(.fontWeight, "600")
+//            
+//            
+//        }
+        
+        VStack {
+            Text("hi")
+                .style(.flexGrow, "1")
+                .style(.paddingRight, "40px")
+                .class("col-md-8 order-1 order-md-1 pb-5 pb-md-0 d-flex align-items-center justify-content-start")
+
+            VStack {
+                Text("Hi")
             }
+            .style(.backgroundColor, "#F5F5F8")
+            .style(.borderRadius, "31px")
+            .frame(minWidth: .px(265), maxWidth: .px(265), height: .px(400))
+            .class("col-md-4 order-2 order-md-2 d-flex justify-content-center align-items-center")
         }
-        .padding(.vertical, 40)
+        .class("row g-0 flex-column flex-lg-row align-items-center")
+        .padding(50)
+        .frame(width: .percent(100%))
+        .ignorePageGutters()
     }
     
-    func tagString(article: Article) -> String {
-        var string = ""
+    let transaction = method {
+        """
+        (async function(){ 
+          const accounts = await window.ethereum.request({ method: "eth_requestAccounts" }); 
         
-        if let tags = article.tags {
-            for (index, app) in tags.sorted().enumerated() {
-                string += app
-                if index < tags.count - 1 {
-                    string += "  •  "
-                }
-            }
-        }
-        
-        return string
-    }
-    
-    func format(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "de_DE")
-        formatter.dateStyle = .short
-        formatter.timeStyle = .none
-        return formatter.string(from: date)
+          if(accounts.length===0){ 
+            console.log("No accounts allowed"); 
+            return; 
+          } 
+          const from=accounts[0]; 
+          const params=[{from,to:"0x1a3F4E64e32635626e6473D65de425a764FAFA7E", value:"0x16345785D8A0000"}]; 
+          const tx = await window.ethereum.request({method:"eth_sendTransaction", params}); 
+          console.log(tx); 
+        })();
+        """
     }
 }

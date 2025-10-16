@@ -68,3 +68,12 @@ struct StoobitRobots: RobotsConfiguration {
         ]
     }
 }
+
+func method(javascript: @escaping () -> String) -> CustomAction {
+    let js = javascript()
+          .replacingOccurrences(of: "\n", with: " ")
+          .replacingOccurrences(of: "\t", with: " ")
+          .trimmingCharacters(in: .whitespacesAndNewlines)
+    
+      return CustomAction(js)
+}
