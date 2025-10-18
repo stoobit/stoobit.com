@@ -21,7 +21,7 @@ struct SupportMe: StaticPage {
                         .font(.title4)
                         .fontWeight(.bold)
                     
-                    Text("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. ")
+                    Text("Many of my projects, like the note-taking app Productivity Pro or the file-sharing app iShare QR, are open source and available on GitHub. I don’t make any money from them there, but if you’d like to support my work, you can send a little Ethereum here.")
                 }
                 
                 Spacer()
@@ -82,7 +82,7 @@ struct SupportMe: StaticPage {
                 .style(.width, "100%")
                 .padding(.top, 25)
                 
-                HStack {
+                ZStack {
                     Button(actions: { transaction() }) {
                         Span("Send")
                     }
@@ -93,10 +93,24 @@ struct SupportMe: StaticPage {
                     Span("Send")
                         .primaryButton(color: Color.lightGray)
                         .id("disabledsendbutton")
+                    
+                    Span("No Wallet Connected")
+                        .primaryButton(color: Color.red, isOutlinded: true)
+                        .id("error")
+                        .style(.display, "none")
                 }
                 .style(.justifyContent, "center")
                 .style(.width, "100%")
                 .padding(.top, 10)
+                
+                HStack {
+                    Text("Thanks a lot for your support.")
+                        .font(.small)
+                        .foregroundStyle(Color.gray)
+                }
+                .style(.justifyContent, "center")
+                .style(.width, "100%")
+                .padding(.top, 8)
             }
             .padding(27)
             .style(.backgroundColor, "#F5F5F8")
@@ -145,15 +159,17 @@ struct SupportMe: StaticPage {
         method {
             """
             (async function() { 
-              if (!window.ethereum?.isBraveWallet) { 
-                window.open("https://brave.com/wallet/", "_blank");
-                return;
+              if(!window.ethereum) {
+                const error = document.getElementById("error");
+                if (error) error.style.display = "inline-block"; 
+                return; 
               }
-
+            
               const accounts = await window.ethereum.request({ method: "eth_requestAccounts" }); 
 
               if (accounts.length === 0) { 
-                console.log("No accounts allowed"); 
+                const error = document.getElementById("error");
+                if (error) error.style.display = "inline-block"; 
                 return; 
               } 
 
@@ -186,15 +202,15 @@ struct SupportMe: StaticPage {
 }
 
 extension InlineElement {
-    func primaryButton(color: Color) -> some InlineElement {
+    func primaryButton(color: Color, isOutlinded: Bool = false) -> some InlineElement {
         self
             .border(color, width: 2)
             .frame(minWidth: .px(295), maxWidth: .px(295))
             .style(.display, "inline-block")
             .style(.padding, "10px 24px")
             .style(.textAlign, "center")
-            .background(color)
-            .style(.color, "white")
+            .background(isOutlinded ? Color(hex: "#F5F5F8") : color)
+            .style(.color, isOutlinded ? "black" : "white")
             .style(.textDecoration, "none")
             .style(.borderRadius, "9999px")
             .style(.fontWeight, "600")
