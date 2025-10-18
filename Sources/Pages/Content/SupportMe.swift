@@ -144,22 +144,41 @@ struct SupportMe: StaticPage {
     func transaction() -> CustomAction {
         method {
             """
-            (async function(){ 
-              if(!window.ethereum?.isBraveWallet) { 
+            (async function() { 
+              if (!window.ethereum?.isBraveWallet) { 
                 window.open("https://brave.com/wallet/", "_blank");
                 return;
               }
-            
+
               const accounts = await window.ethereum.request({ method: "eth_requestAccounts" }); 
-            
-              if(accounts.length===0){ 
+
+              if (accounts.length === 0) { 
                 console.log("No accounts allowed"); 
                 return; 
               } 
-              const from=accounts[0]; 
-              const params=[{from,to:"0x1a3F4E64e32635626e6473D65de425a764FAFA7E", value:"0x16345785D8A0000"}]; 
-              const tx = await window.ethereum.request({method:"eth_sendTransaction", params}); 
-              console.log(tx); 
+
+              const from = accounts[0]; 
+
+              const response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd");
+              const data = await response.json();
+              const ethPriceUSD = data.ethereum.usd;
+
+              const ethAmount = window.amount / ethPriceUSD;
+
+              const weiAmount = "0x" + BigInt(Math.floor(ethAmount * 1e18)).toString(16);
+
+              const params = [{ 
+                from, 
+                to: "0x1a3F4E64e32635626e6473D65de425a764FAFA7E", 
+                value: weiAmount
+              }]; 
+
+              try {
+                const tx = await window.ethereum.request({ method: "eth_sendTransaction", params }); 
+                console.log(tx); 
+              } catch (err) {
+                console.error("Transaction failed:", err);
+              }
             })();
             """
         }
