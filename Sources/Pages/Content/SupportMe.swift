@@ -29,42 +29,36 @@ struct SupportMe: StaticPage {
                 VStack(alignment: .center) {
                     HStack {
                         ZStack {
+                            Span("$05")
+                                .selectionButton(isOutlined: false)
+                            
                             Button(actions: { set(value: 05, id: "five") }) {
                                 Span("$05")
                             }
                             .selectionButton(isOutlined: true)
-                            .id("notfivedollars")
-                            
-                            Span("$5")
-                                .selectionButton(isOutlined: false)
-                                .style(.display, "none")
-                                .id("fivedollars")
+                            .id("five")
                         }
                         
                         ZStack {
+                            Span("$10")
+                                .selectionButton(isOutlined: false)
+                            
                             Button(actions: { set(value: 10, id: "ten") }) {
                                 Span("$10")
                             }
                             .selectionButton(isOutlined: true)
-                            .id("nottendollars")
-                            
-                            Span("$10")
-                                .selectionButton(isOutlined: false)
-                                .style(.display, "none")
-                                .id("tendollars")
+                            .id("ten")
                         }
                         
                         ZStack {
+                            Span("$15")
+                                .selectionButton(isOutlined: false)
+                            
                             Button(actions: { set(value: 15, id: "fifteen") }) {
                                 Span("$15")
                             }
                             .selectionButton(isOutlined: true)
-                            .id("notfifteendollars")
-                            
-                            Span("$15")
-                                .selectionButton(isOutlined: false)
-                                .style(.display, "none")
-                                .id("fifteendollars")
+                            .id("fifteen")
                         }
                     }
                     .style(.justifyContent, "center")
@@ -117,6 +111,36 @@ struct SupportMe: StaticPage {
         .ignorePageGutters()
     }
     
+    func set(value: Int, id: String) -> CustomAction {
+        var remaining: [String] = ["five", "ten", "fifteen"]
+        remaining.removeAll(where: { $0 == id })
+        
+        return method {
+            """
+            (function(){ 
+                window.amount = \(value);
+                
+                const sendbutton = document.getElementById("sendbutton");
+                if (sendbutton) sendbutton.style.display = "inline-block";
+            
+                const disabledsendbutton = document.getElementById("disabledsendbutton");
+                if (disabledsendbutton) disabledsendbutton.style.display = "none";
+            
+            
+            
+                const selection = document.getElementById("\(id)");
+                if (selection) selection.style.display = "none";
+            
+                var alternative = document.getElementById("\(remaining[0])");
+                if (alternative) alternative.style.display = "inline-block";
+            
+                alternative = document.getElementById("\(remaining[1])");
+                if (alternative) alternative.style.display = "inline-block";
+            })();
+            """
+        }
+    }
+    
     func transaction() -> CustomAction {
         method {
             """
@@ -136,22 +160,6 @@ struct SupportMe: StaticPage {
               const params=[{from,to:"0x1a3F4E64e32635626e6473D65de425a764FAFA7E", value:"0x16345785D8A0000"}]; 
               const tx = await window.ethereum.request({method:"eth_sendTransaction", params}); 
               console.log(tx); 
-            })();
-            """
-        }
-    }
-    
-    func set(value: Int, id: String) -> CustomAction {
-        method {
-            """
-            (function(){ 
-                window.amount = \(value);
-                
-                const sendbutton = document.getElementById("sendbutton");
-                if (sendbutton) sendbutton.style.display = "inline-block";
-                
-                const disabledsendbutton = document.getElementById("disabledsendbutton");
-                if (disabledsendbutton) disabledsendbutton.style.display = "none";
             })();
             """
         }
@@ -180,7 +188,7 @@ extension InlineElement {
             .style(.display, "inline-block")
             .style(.padding, "10px 24px")
             .style(.textAlign, "center")
-            .background(isOutlined ? .clear : .bootstrapBlue)
+            .background(isOutlined ? Color(hex: "#F5F5F8") : .bootstrapBlue)
             .style(.color, isOutlined ? "black" : "white")
             .style(.textDecoration, "none")
             .style(.borderRadius, "9999px")
