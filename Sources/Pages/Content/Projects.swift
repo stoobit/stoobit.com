@@ -52,20 +52,37 @@ struct Projects: StaticPage {
                                 
                                 if let title = project.secondaryTitle,
                                    let destination = project.secondaryDestination {
-                                    Link(target: project.primaryDestination) {
-                                        Span(project.primaryTitle)
+                                    
+                                    if project.title == "Urban Green" {
+                                        Button("Demo Video") {
+                                            ShowModal(id: "urbangreen")
+                                        }
+                                        .frame(width: buttonWidth)
+                                        .style(.display, "inline-block")
+                                        .style(.padding, "10px 24px")
+                                        .style(.backgroundColor, "#007BFF")
+                                        .style(.color, "white")
+                                        .style(.textDecoration, "none")
+                                        .style(.borderRadius, "9999px")
+                                        .style(.fontWeight, "600")
+                                        .style(.textAlign, "center")
+                                        .border(Color.bootstrapBlue, width: 2)
+                                    } else {
+                                        Link(target: project.primaryDestination) {
+                                            Span(project.primaryTitle)
+                                        }
+                                        .frame(width: buttonWidth)
+                                        .target(.blank)
+                                        .style(.display, "inline-block")
+                                        .style(.padding, "10px 24px")
+                                        .style(.backgroundColor, "#007BFF")
+                                        .style(.color, "white")
+                                        .style(.textDecoration, "none")
+                                        .style(.borderRadius, "9999px")
+                                        .style(.fontWeight, "600")
+                                        .style(.textAlign, "center")
+                                        .border(Color.bootstrapBlue, width: 2)
                                     }
-                                    .frame(width: buttonWidth)
-                                    .target(.blank)
-                                    .style(.display, "inline-block")
-                                    .style(.padding, "10px 24px")
-                                    .style(.backgroundColor, "#007BFF")
-                                    .style(.color, "white")
-                                    .style(.textDecoration, "none")
-                                    .style(.borderRadius, "9999px")
-                                    .style(.fontWeight, "600")
-                                    .style(.textAlign, "center")
-                                    .border(Color.bootstrapBlue, width: 2)
                                     
                                     Link(target: destination) {
                                         Span(title)
@@ -133,6 +150,13 @@ struct Projects: StaticPage {
             }
         }
         .padding(.vertical, 40)
+        
+        Modal(id: "urbangreen") {
+            Embed(youTubeID: "IiVwdiye4EQ", title: "Urban Green Demo")
+                .aspectRatio(.r16x9)
+                .frame(minHeight: .percent(100%), maxHeight: .percent(100%))
+        }
+        .size(.xLarge)
     }
 }
 

