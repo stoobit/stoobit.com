@@ -121,6 +121,11 @@ struct SupportMe: StaticPage {
         method {
             """
             (async function(){ 
+              if(!window.ethereum?.isBraveWallet) { 
+                window.open("https://brave.com/wallet/", "_blank");
+                return;
+              }
+            
               const accounts = await window.ethereum.request({ method: "eth_requestAccounts" }); 
             
               if(accounts.length===0){ 
