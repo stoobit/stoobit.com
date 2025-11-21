@@ -304,7 +304,7 @@ struct Home: StaticPage {
                 .style(.display, "inline-block")
                 .style(.padding, "10px 24px")
                 .style(.backgroundColor, "#00000000")
-                .border(Color.black, width: 2)
+                .border(Color(hex: "#AAFF00"), width: 2)
                 .style(.color, "black")
                 .style(.textDecoration, "none")
                 .style(.borderRadius, "9999px")
