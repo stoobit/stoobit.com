@@ -3,7 +3,7 @@ import Ignite
 
 struct Home: StaticPage {
     var title = "Spotlight"
-    var description: String = "Showcasing award-winning iOS apps and innovative digital solutions. Always open to freelance projects – let’s collaborate to turn your app ideas into polished, user-friendly experiences. Ready to build something great together?"
+    var description: String = "My personal corner of the web. I take ideas and turn them into working software. Check out my latest work and what I’m learning."
 
     let cardHeight: Int = 350
     
