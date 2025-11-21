@@ -12,6 +12,7 @@ struct Home: StaticPage {
             ContactCard
             VitalityPro
             StoobitAnalytics
+            BalanceCare
             AllProjects
         }
         .frame(width: .percent(100%))
@@ -107,7 +108,7 @@ struct Home: StaticPage {
                     .font(.title2)
                     .fontWeight(.bold)
                 
-                Text("Swift Student Challenge Winner")
+                Text("Swift Student Challenge 24 Winner")
                     .font(.title4)
                     .fontWeight(.regular)
                     .foregroundStyle(Color.gray)
@@ -221,6 +222,89 @@ struct Home: StaticPage {
                 .style(.padding, "10px 24px")
                 .style(.backgroundColor, "#00000000")
                 .border(Color.bootstrapBlue, width: 2)
+                .style(.color, "black")
+                .style(.textDecoration, "none")
+                .style(.borderRadius, "9999px")
+                .style(.fontWeight, "600")
+            }
+        }
+        .style(.textAlign, "center")
+        .frame(height: .percent(100%))
+        .padding(.horizontal, 20)
+    }
+    
+    // Balance Care
+    var BalanceCare: some HTML {
+        VStack {
+            BalanceCareText
+                .class("col-md-6 order-1 order-md-2 pb-5 pb-md-0")
+            
+            BalanceCareImage
+                .class("col-md-6 order-2 order-md-1")
+        }
+        .class("row g-0 flex-column flex-md-row align-items-center")
+        .padding(50)
+        .frame(width: .percent(100%))
+        .background(Color(hex: "#F5F5F8"))
+    }
+    var BalanceCareImage: some HTML {
+        Image(
+            "/assets/lab.jpeg",
+            description: "Two screenshots of Balance Lab."
+        )
+        .resizable()
+        .width(5)
+    }
+    var BalanceCareText: some HTML {
+        VStack(spacing: 25) {
+            Image(
+                "/assets/squirrel.svg",
+                description: "The Balance Care logo."
+            )
+            .resizable()
+            .frame(width: .px(100), height: .px(100))
+            
+            VStack(spacing: 5) {
+                Text("Balance Lab")
+                    .font(.title2)
+                    .foregroundStyle(Color.black)
+                    .fontWeight(.bold)
+                
+                Text("Help Me Measure Your Balance")
+                    .font(.title4)
+                    .fontWeight(.regular)
+                    .foregroundStyle(Color.gray)
+            }
+           
+            VStack(spacing: 10) {
+                let buttonWidth: Int = 250
+            
+                let appclip = "https://appclip.apple.com/id?p=com.stoobit.lab.Clip"
+                let appstore = "https://apps.apple.com/us/app/balance-lab/id6755392102"
+                
+                Link(target: appclip) {
+                    Span("Open App Clip")
+                }
+                .frame(width: buttonWidth)
+                .target(.blank)
+                .style(.display, "inline-block")
+                .style(.padding, "10px 24px")
+                .style(.backgroundColor, "#AAFF00")
+                .style(.color, "black")
+                .style(.textDecoration, "none")
+                .border(Color(hex: "#AAFF00"), width: 2)
+                .style(.borderRadius, "9999px")
+                .style(.fontWeight, "600")
+                
+                Link(target: appstore) {
+                    Span("View on the App Store")
+                }
+                .frame(width: buttonWidth)
+                .target(.blank)
+                .style(.display, "inline-block")
+                .style(.padding, "10px 24px")
+                .style(.backgroundColor, "#00000000")
+                .border(Color.black, width: 2)
                 .style(.color, "black")
                 .style(.textDecoration, "none")
                 .style(.borderRadius, "9999px")
