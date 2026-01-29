@@ -41,11 +41,10 @@ struct Home: StaticPage {
                         )
                     )
                 
-                Text("I help turn your app idea into a polished, App Store-ready product."
-                )
-                .style(.textAlign, "center")
-                .fontWeight(.regular)
-                .font(.title5)
+                Text("I help turn your app idea into a polished, App Store-ready product.")
+                    .style(.textAlign, "center")
+                    .fontWeight(.regular)
+                    .font(.title5)
             }
             
             VStack(spacing: 13) { 
@@ -118,7 +117,7 @@ struct Home: StaticPage {
                 let buttonWidth: Int = 250
                 
                 let appstore = "https://apps.apple.com/us/app/vitality-pro/id6478023736"
-                let ssc = "https://developer.apple.com/swift-student-challenge/"
+                let github = "https://github.com/stoobit/Vitality-Pro"
                 
                 Link(target: appstore) {
                     Span("View on the App Store")
@@ -134,8 +133,8 @@ struct Home: StaticPage {
                 .style(.borderRadius, "9999px")
                 .style(.fontWeight, "600")
                 
-                Link(target: ssc) {
-                    Span("Swift Student Challenge")
+                Link(target: github) {
+                    Span("View on GitHub")
                 }
                 .frame(width: buttonWidth)
                 .target(.blank)
@@ -249,8 +248,8 @@ struct Home: StaticPage {
     }
     var BalanceCareImage: some HTML {
         Image(
-            "/assets/lab.jpeg",
-            description: "Two screenshots of Balance Lab."
+            "/assets/balance_care_preview.jpeg",
+            description: "Two screenshots of Balance Care."
         )
         .resizable()
         .width(5)
@@ -265,12 +264,12 @@ struct Home: StaticPage {
             .frame(width: .px(100), height: .px(100))
             
             VStack(spacing: 5) {
-                Text("Balance Lab")
+                Text("Balance Care")
                     .font(.title2)
                     .foregroundStyle(Color.black)
                     .fontWeight(.bold)
                 
-                Text("Help Me Measure Your Balance")
+                Text("Swift Student Challenge 2026 Project")
                     .font(.title4)
                     .fontWeight(.regular)
                     .foregroundStyle(Color.gray)
@@ -279,36 +278,37 @@ struct Home: StaticPage {
             VStack(spacing: 10) {
                 let buttonWidth: Int = 250
             
-                let appclip = "https://appclip.apple.com/id?p=com.stoobit.lab.Clip"
-                let appstore = "https://apps.apple.com/us/app/balance-lab/id6755392102"
+                let appstore = "https://appclip.apple.com/id?p=com.stoobit.lab.Clip"
+                let github = "https://apps.apple.com/us/app/balance-lab/id6755392102"
                 
-                Link(target: appclip) {
-                    Span("Open App Clip")
+//                Link(target: appstore) {
+                Link(target: "https://apps.apple.com/at/developer/till-bruegmann/id1690039205") {
+                    Span("Available Soon")
                 }
                 .frame(width: buttonWidth)
                 .target(.blank)
                 .style(.display, "inline-block")
                 .style(.padding, "10px 24px")
-                .style(.backgroundColor, "#AAFF00")
-                .style(.color, "black")
+                .style(.backgroundColor, "#8DD300")
+                .style(.color, "white")
                 .style(.textDecoration, "none")
-                .border(Color(hex: "#AAFF00"), width: 2)
+                .border(Color(hex: "#8DD300"), width: 2)
                 .style(.borderRadius, "9999px")
                 .style(.fontWeight, "600")
                 
-                Link(target: appstore) {
-                    Span("View on the App Store")
-                }
-                .frame(width: buttonWidth)
-                .target(.blank)
-                .style(.display, "inline-block")
-                .style(.padding, "10px 24px")
-                .style(.backgroundColor, "#00000000")
-                .border(Color(hex: "#AAFF00"), width: 2)
-                .style(.color, "black")
-                .style(.textDecoration, "none")
-                .style(.borderRadius, "9999px")
-                .style(.fontWeight, "600")
+//                Link(target: github) {
+//                    Span("View on GitHub")
+//                }
+//                .frame(width: buttonWidth)
+//                .target(.blank)
+//                .style(.display, "inline-block")
+//                .style(.padding, "10px 24px")
+//                .style(.backgroundColor, "#00000000")
+//                .border(Color(hex: "#8DD300"), width: 2)
+//                .style(.color, "black")
+//                .style(.textDecoration, "none")
+//                .style(.borderRadius, "9999px")
+//                .style(.fontWeight, "600")
             }
         }
         .style(.textAlign, "center")
