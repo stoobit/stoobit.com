@@ -21,7 +21,7 @@ struct StoobitWebsite: Site {
     
     var builtInIconsEnabled = true
     var syntaxHighlighterConfiguration: SyntaxHighlighterConfiguration = .init(
-        languages: [.swift, .python, .go]
+        languages: [.swift, .python, .objectiveC, .go]
     )
     
     var darkTheme: (any Theme)? = nil

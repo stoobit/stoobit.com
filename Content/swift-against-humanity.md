@@ -4,17 +4,67 @@ description:
 date: 2024-03-06 15:30
 tags: April Fools, Swift
 published: false
-image: /images/photos/washing.jpg
+image: /assets/stoobit_analytics_preview.png
 ---
 # Now available to pre-order: Swift Against Humanity
 
 So you think you know Swift? Think again! Fresh from the success of our [audiobook launch](https://youtu.be/SHvBEwskO-k), Laboratoires TwoStraws is back with an all-new card game that will finally give you something to do while waiting for Xcode to finish indexing.
-```swift
-struct Test: View {
-    var body: some View {
-        Text("Hello, World!")
-    }
+```objectivec
+#import "ViewController.h"
+#import "StackView.h"
+
+@implementation ViewController
+
+- (void)viewWillAppear {
+    [super viewWillAppear];
+    [self setPreferredContentSize:CGSizeMake(400, 600)];
+    [[self.view.window standardWindowButton:NSWindowZoomButton] setEnabled:NO];
 }
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.view = [[NSView alloc] init];
+    self.view.wantsLayer = YES;
+    
+    StackView *stackView = [[StackView alloc] init];
+    [stackView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [stackView setOrientation:NSUserInterfaceLayoutOrientationVertical];
+    
+    for (int i = 0; i < 100; i++) {
+        NSTextField *textField = [NSTextField labelWithString:@"Hello, World"];
+        [stackView addArrangedSubview:textField];
+    }
+    
+    NSScrollView *scrollView = [[NSScrollView alloc] init];
+    [scrollView setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [scrollView setDocumentView:stackView];
+    
+    [scrollView setHasVerticalScroller:YES];
+    [scrollView setHasHorizontalScroller:NO];
+    
+    [self.view addSubview:scrollView];
+    
+    [NSLayoutConstraint activateConstraints:@[
+        [stackView.leadingAnchor constraintEqualToAnchor:scrollView.documentView.leadingAnchor],
+        [stackView.trailingAnchor constraintEqualToAnchor:scrollView.documentView.trailingAnchor],
+        [stackView.topAnchor constraintEqualToAnchor:scrollView.documentView.topAnchor],
+        
+        [scrollView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+        [scrollView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
+        [scrollView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+        [scrollView.topAnchor constraintEqualToAnchor:self.view.topAnchor],
+    ]];
+}
+
+- (void)setRepresentedObject:(id)representedObject {
+    [super setRepresentedObject:representedObject];
+
+    // Update the view, if already loaded.
+}
+
+
+@end
 ```
 
 It’s called **Swift Against Humanity**, and the rules are both dazzlingly simple and also surprisingly similar to some other games you might have previously heard of: one player places a black card on the table that contains a question or part of a sentence, and all other players play one white card they think best completes it. The first player then shuffles the white cards, reads them out, then picks a winner – it’s literally *minutes* of fun.

@@ -22,7 +22,7 @@ struct StoobitHeader: HTML {
                 Span("Contact")
             }
             
-            Link(target: SupportMe().path) {
+            Link(target: "https://github.com/sponsors/stoobit") {
                 Span("Support Me")
                     .foregroundStyle(Color.bootstrapBlue)
             }

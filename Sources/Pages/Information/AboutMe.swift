@@ -83,10 +83,13 @@ struct AboutMe: StaticPage {
         ListElement(
             title: "Technical Skills",
             items: [
-                Span("iOS Development: Swift, SwiftUI, UIKit"),
-                    Span("Web Development: HTML, CSS, JavaScript, TypeScript, React"),
-                    Span("Backend Development: Go, Java"),
-                    Span("Artificial Intelligence: Swift, Python")
+                Span("iOS Development: Swift, Objective-C, SwiftUI, UIKit"),
+                Span("Web Development: HTML, CSS, JavaScript, TypeScript, React"),
+                Span("Backend Development: Go, Java"),
+                Span {
+                    Link("Machine Learning", target: "/W-Seminararbeit Neuronale Netze.pdf")
+                        .target(.blank)
+                }
             ]
         ),
     ]

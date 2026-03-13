@@ -10,9 +10,9 @@ struct Home: StaticPage {
     var body: some HTML {
         VStack(alignment: .leading, spacing: 20) {
             ContactCard
-            VitalityPro
-            StoobitAnalytics
             BalanceCare
+            StoobitAnalytics
+            VitalityPro
             AllProjects
         }
         .frame(width: .percent(100%))
@@ -248,7 +248,7 @@ struct Home: StaticPage {
     }
     var BalanceCareImage: some HTML {
         Image(
-            "/assets/balance_care_preview.jpeg",
+            "/assets/balance_care_preview.png",
             description: "Two screenshots of Balance Care."
         )
         .resizable()
@@ -278,12 +278,11 @@ struct Home: StaticPage {
             VStack(spacing: 10) {
                 let buttonWidth: Int = 250
             
-                let appstore = "https://appclip.apple.com/id?p=com.stoobit.lab.Clip"
-                let github = "https://apps.apple.com/us/app/balance-lab/id6755392102"
+                let appstore = "https://apps.apple.com/us/app/balance-care/id6759508081"
+                let github = "https://github.com/stoobit/Balance-Care"
                 
-//                Link(target: appstore) {
-                Link(target: "https://apps.apple.com/at/developer/till-bruegmann/id1690039205") {
-                    Span("Available Soon")
+                Link(target: appstore) {
+                    Span("View on the App Store")
                 }
                 .frame(width: buttonWidth)
                 .target(.blank)
@@ -296,19 +295,19 @@ struct Home: StaticPage {
                 .style(.borderRadius, "9999px")
                 .style(.fontWeight, "600")
                 
-//                Link(target: github) {
-//                    Span("View on GitHub")
-//                }
-//                .frame(width: buttonWidth)
-//                .target(.blank)
-//                .style(.display, "inline-block")
-//                .style(.padding, "10px 24px")
-//                .style(.backgroundColor, "#00000000")
-//                .border(Color(hex: "#8DD300"), width: 2)
-//                .style(.color, "black")
-//                .style(.textDecoration, "none")
-//                .style(.borderRadius, "9999px")
-//                .style(.fontWeight, "600")
+                Link(target: github) {
+                    Span("View on GitHub")
+                }
+                .frame(width: buttonWidth)
+                .target(.blank)
+                .style(.display, "inline-block")
+                .style(.padding, "10px 24px")
+                .style(.backgroundColor, "#00000000")
+                .border(Color(hex: "#8DD300"), width: 2)
+                .style(.color, "black")
+                .style(.textDecoration, "none")
+                .style(.borderRadius, "9999px")
+                .style(.fontWeight, "600")
             }
         }
         .style(.textAlign, "center")

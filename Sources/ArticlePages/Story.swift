@@ -18,11 +18,7 @@ struct Story: ArticlePage {
                 Span {
                     let count = article.estimatedWordCount
                     let minutes = article.estimatedReadingMinutes
-                    "\(count) Words • \(minutes) Minutes to Read • "
-                    
-                    if let tags = article.tags {
-                        "\(tags.map { "#\($0)" }.joined(separator: " "))"
-                    }
+                    "\(count) Words • \(minutes) Minutes to Read"
                 }
                 .foregroundStyle(Color.gray)
             }
