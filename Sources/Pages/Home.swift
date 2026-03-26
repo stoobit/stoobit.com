@@ -283,7 +283,7 @@ struct Home: StaticPage {
                 let github = "https://github.com/stoobit/Balance-Care"
                 
                 Link(target: appstore) {
-                    Span("View on the AppStore")
+                    Span("View on the App Store")
                 }
                 .frame(width: buttonWidth)
                 .target(.blank)
