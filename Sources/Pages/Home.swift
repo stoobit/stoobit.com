@@ -189,7 +189,7 @@ struct Home: StaticPage {
                     .font(.title2)
                     .fontWeight(.bold)
                 
-                Text("Check24 Scholarship Project")
+                Text("See what matters.&nbsp;Ship what works.")
                     .font(.title4)
                     .fontWeight(.regular)
                     .foregroundStyle(Color.gray)
@@ -269,7 +269,7 @@ struct Home: StaticPage {
                     .foregroundStyle(Color.black)
                     .fontWeight(.bold)
                 
-                Text("Swift Student Challenge 2026 Project")
+                Text("Stay independent longer.")
                     .font(.title4)
                     .fontWeight(.regular)
                     .foregroundStyle(Color.gray)
@@ -278,11 +278,12 @@ struct Home: StaticPage {
             VStack(spacing: 10) {
                 let buttonWidth: Int = 250
             
+                let testflight = "https://testflight.apple.com/join/cG95srBB"
                 let appstore = "https://apps.apple.com/us/app/balance-care/id6759508081"
                 let github = "https://github.com/stoobit/Balance-Care"
                 
                 Link(target: appstore) {
-                    Span("View on the App Store")
+                    Span("View on the AppStore")
                 }
                 .frame(width: buttonWidth)
                 .target(.blank)
@@ -295,8 +296,8 @@ struct Home: StaticPage {
                 .style(.borderRadius, "9999px")
                 .style(.fontWeight, "600")
                 
-                Link(target: github) {
-                    Span("View on GitHub")
+                Link(target: testflight) {
+                    Span("Join TestFlight")
                 }
                 .frame(width: buttonWidth)
                 .target(.blank)
