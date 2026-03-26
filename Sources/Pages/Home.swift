@@ -213,7 +213,7 @@ struct Home: StaticPage {
                     .style(.fontWeight, "600")
                 
                 Link(target: check24) {
-                    Span("About the Scholarship")
+                    Span("Check24 Scholarship")
                 }
                 .frame(width: buttonWidth)
                 .target(.blank)
