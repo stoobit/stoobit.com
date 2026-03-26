@@ -189,7 +189,7 @@ struct Home: StaticPage {
                     .font(.title2)
                     .fontWeight(.bold)
                 
-                Text("See what matters.&nbsp;Ship what works.")
+                Text("See&nbsp;what&nbsp;matters. Ship&nbsp;what&nbsp;works.")
                     .font(.title4)
                     .fontWeight(.regular)
                     .foregroundStyle(Color.gray)
