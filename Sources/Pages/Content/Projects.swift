@@ -20,9 +20,7 @@ struct Projects: StaticPage {
                 .padding(.leading, 20)
             
             Grid(spacing: 15) {
-                ForEach(projects.sorted {
-                    $0.title.lowercased() < $1.title.lowercased()
-                }) { project in
+                ForEach(projects) { project in
                     VStack {
                         ZStack {
                             Image(decorative: "/assets/\(project.headerImage)")
@@ -193,6 +191,23 @@ struct Project: Identifiable {
 @MainActor
 let projects: [Project] = [
     Project(
+        title: "Productivity Pro",
+        subtitle: "Notes, Schedules & To-Dos.",
+        headerImage: "light.png",
+        headerGradient: Gradient(
+            colors: [
+                Color(hex: "#181818"),
+                Color(hex: "#2B2B2B")
+            ],
+            type: .linear(angle: 0)
+        ),
+        primaryTitle: "View on the App Store",
+        primaryDestination: "https://apps.apple.com/us/app/productivity-pro/id6449678571",
+        secondaryTitle: "View on GitHub",
+        secondaryDestination: "https://github.com/stoobit/Productivity-Pro",
+        plattforms: ["iPadOS"]
+    ),
+    Project(
         title: "iShare QR",
         subtitle: "Share your files via QR codes.",
         headerImage: "qrcode.svg",
@@ -233,20 +248,35 @@ let projects: [Project] = [
         plattforms: ["iOS"]
     ),
     Project(
-        title: "Urban Green",
-        subtitle: "Let's make your city bloom.",
-        headerImage: "leaf.svg",
+        title: "Philosophai",
+        subtitle: "Swimming in a Sea of Thoughts",
+        headerImage: "philo.png",
         headerGradient: Gradient(
             colors: [
-                Color(hex: "#007F24"),
-               Color(hex: "#00B000")
+                Color(hex: "#008AFF"),
+                Color(hex: "#00D3FF")
             ],
             type: .linear(angle: 0)
         ),
-        primaryTitle: "YouTube",
-        primaryDestination: "https://www.youtube.com/watch?v=IiVwdiye4EQ",
-        secondaryTitle: "Gemini Dev Competition",
-        secondaryDestination: "https://ai.google.dev/competition/projects/urban-green",
+        primaryTitle: "View on the App Store",
+        primaryDestination: "https://apps.apple.com/us/app/philosophai/id6761296125",
+        plattforms: ["iPadOS", "iOS", "macOS"]
+    ),
+    Project(
+        title: "Balance Care",
+        subtitle: "Stay independent longer.",
+        headerImage: "squirrel.svg",
+        headerGradient: Gradient(
+            colors: [
+                Color(hex: "#FFFFFF"),
+                Color(hex: "#F5F5F8"),
+            ],
+            type: .linear(angle: 0)
+        ),
+        primaryTitle: "View on the App Store",
+        primaryDestination: "https://apps.apple.com/us/app/balance-care/id6759508081",
+        secondaryTitle: "Join TestFlight",
+        secondaryDestination: "https://testflight.apple.com/join/cG95srBB",
         plattforms: ["iOS"]
     ),
     Project(
@@ -267,6 +297,39 @@ let projects: [Project] = [
         plattforms: ["iOS"]
     ),
     Project(
+        title: "Thumbnailed",
+        subtitle: "Generate AI Thumbnails. Local.",
+        headerImage: "play.svg",
+        headerGradient: Gradient(
+            colors: [
+                Color(hex: "#576DFF"),
+                Color(hex: "#525BDE"),
+                Color(hex: "#5834B4"),
+            ],
+            type: .linear(angle: 0)
+        ),
+        primaryTitle: "View on the App Store",
+        primaryDestination: "https://apps.apple.com/de/app/thumbnailed/id6737781505",
+        plattforms: ["macOS"]
+    ),
+    Project(
+        title: "Urban Green",
+        subtitle: "Let's make your city bloom.",
+        headerImage: "leaf.svg",
+        headerGradient: Gradient(
+            colors: [
+                Color(hex: "#007F24"),
+               Color(hex: "#00B000")
+            ],
+            type: .linear(angle: 0)
+        ),
+        primaryTitle: "YouTube",
+        primaryDestination: "https://www.youtube.com/watch?v=IiVwdiye4EQ",
+        secondaryTitle: "Gemini Dev Competition",
+        secondaryDestination: "https://ai.google.dev/competition/projects/urban-green",
+        plattforms: ["iOS"]
+    ),
+    Project(
         title: "stoobit analytics",
         subtitle: "See what matters. Ship what works.",
         headerImage: "analytics.svg",
@@ -280,22 +343,5 @@ let projects: [Project] = [
         primaryTitle: "Visit Website",
         primaryDestination: "https://analytics.stoobit.com/",
         plattforms: ["iOS", "Android", "Web"]
-    ),
-    Project(
-        title: "Productivity Pro",
-        subtitle: "Notes, Schedules & To-Dos.",
-        headerImage: "light.png",
-        headerGradient: Gradient(
-            colors: [
-                Color(hex: "#181818"),
-                Color(hex: "#2B2B2B")
-            ],
-            type: .linear(angle: 0)
-        ),
-        primaryTitle: "View on the App Store",
-        primaryDestination: "https://apps.apple.com/us/app/productivity-pro/id6449678571",
-        secondaryTitle: "View on GitHub",
-        secondaryDestination: "https://github.com/stoobit/Productivity-Pro",
-        plattforms: ["iPadOS"]
     ),
 ]

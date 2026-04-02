@@ -280,7 +280,6 @@ struct Home: StaticPage {
             
                 let testflight = "https://testflight.apple.com/join/cG95srBB"
                 let appstore = "https://apps.apple.com/us/app/balance-care/id6759508081"
-                let github = "https://github.com/stoobit/Balance-Care"
                 
                 Link(target: appstore) {
                     Span("View on the App Store")
